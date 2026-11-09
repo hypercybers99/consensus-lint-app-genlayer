@@ -1,0 +1,169 @@
+{
+  "verifiedAt": "2026-11-09T13:38:54.071Z",
+  "network": "GenLayer Studionet (Preview)",
+  "chainId": 61999,
+  "totalVerified": 16,
+  "totalAttempted": 16,
+  "records": [
+    {
+      "hash": "0xadebf1cc2d33a6c1220b3cf9f89fe7a331993fc8cab682b9a198378ab843fc9a",
+      "context": "Target Reg (GoodContract Fixture)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0x2ae40d46880baadcf022134997ce0a190635bebfd5f8810a6e8dea18d49e6a3d",
+      "context": "Audit (GoodContract Fixture)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0xb1787d0993a8ef6cd6700160984871072ec6f1885d38a4431b2edd59efc64e7f",
+      "context": "Target Reg (MixedContract Fixture)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0xdc5d041484a1bce7fa79cb444d9c2079200c65b4e64eafc2ae85e15fb9336217",
+      "context": "Audit (MixedContract Fixture)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0x2bc8fccf4ef386e6bf834572bf1acbe4583739b2fb5978ed37d12e0daa792d70",
+      "context": "Target Reg (BadContract Fixture)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "4/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (4/5 agreed) - state applied"
+    },
+    {
+      "hash": "0x750d98f5f98dc79cb0594951ba24fd4eaacb4a17af9a170f7a325539b14b0bda",
+      "context": "Audit (BadContract Fixture)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0x31ba6d9603c23b8d708b1e2dad54bb1660f5ef6d6c6587fdcfe505b6a08a56a2",
+      "context": "Target Reg (NotAContract Fixture)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0xa230546f3353fed93962514515e23ca5518b64429e2585950b6c5dedc6cfd434",
+      "context": "Audit (NotAContract Fixture)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0xab53bb3ab5efb73d8adbab4afb81706c2aee92555691134f2f5bfc2029f04de2",
+      "context": "Target Reg (ShellLike Large Fixture)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0xe6234c85dada1bffee2ba2a7c1b33ee5216034485a9511acaef670837712552f",
+      "context": "Audit (ShellLike Large Fixture)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0x1bdffe953a4d33105c861a4137e8749b690ddaec76d056e95add61e88b86a565",
+      "context": "Badge Claim (good_contract)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0x2e21aa846afa2188142dc4c7dda4f273898078045a87cff0f245b9ad4269e0f6",
+      "context": "Maintainer Response (c74c8288839d)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "4/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (4/5 agreed) - state applied"
+    },
+    {
+      "hash": "0xf7d60e8d5d35bd963a1ebba95fad8ab2a8c99fd92b4d7b349554016699e3e445",
+      "context": "E2E Live (register_target)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0x1d74f971626e5af43a8200239b2475e2782e7fcf1c44dca4ad82588bf08513fa",
+      "context": "E2E Live (audit_target)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0x6af85be74e3f741f510e6b03298a9618b98feca7aca2ea60112eb0722dfb3724",
+      "context": "E2E Live (respond_to_finding)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "5/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (5/5 agreed) - state applied"
+    },
+    {
+      "hash": "0x43b9cd0e9b3d4e4e93c3ad5da77a4e797745abedfbf92b8fa11ba840da609009",
+      "context": "E2E Live (unauthorized_respond_to_finding_revert)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "ERROR",
+      "userError": "only the registrant can do this",
+      "outcome": "Reverted - state not applied (3/5 agreed on the revert)"
+    }
+  ]
+}

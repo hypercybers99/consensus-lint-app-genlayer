@@ -1,0 +1,1424 @@
+{
+  "network": "GenLayer Studionet (Preview)",
+  "chainId": 61999,
+  "timestamp": "2026-10-31T09:27:38.620Z",
+  "contracts": {
+    "ConsensusLint": "0xDd9c4b5d187664780142f24E4327D48Db59363D7",
+    "HygieneBadges": "0xbd8d4F05423Dd98e2A1F911A371911c1671Eb140"
+  },
+  "targets": {
+    "good_contract": {
+      "label": "GoodContract Fixture",
+      "series": "Fixtures",
+      "url": "https://raw.githubusercontent.com/hypercybers99/consensus-lint-fixtures/main/good_contract.py",
+      "tid": "2bac0b36b071",
+      "registrationTxHash": "0xadebf1cc2d33a6c1220b3cf9f89fe7a331993fc8cab682b9a198378ab843fc9a",
+      "registrationElapsed": 9.25,
+      "registrationAgreement": "3/5",
+      "auditTxHash": "0x2ae40d46880baadcf022134997ce0a190635bebfd5f8810a6e8dea18d49e6a3d",
+      "auditElapsed": 25.52,
+      "auditAgreement": "3/5",
+      "summary": {
+        "id": "2bac0b36b071",
+        "label": "GoodContract Fixture",
+        "latest_grade": "A",
+        "latest_n": 1,
+        "latest_score": 100,
+        "latest_source_sha256": "1079ccc7c3fac6c7e365b153c0ac1165bad0f7551d9c06e11df5283dab719d77",
+        "ref_kind": "MUTABLE_REF",
+        "truncated": false
+      },
+      "auditRecord": {
+        "at": "2026-10-31T09:26:17Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {},
+        "grade": "A",
+        "judgements": [
+          {
+            "fn": "validator_fn",
+            "id": "J1",
+            "label": "RECOMPUTES",
+            "line_start": 75,
+            "quote": "def val_fetch():\n    res = gl.nondet.web.get(source_url)\n    body = res.body if isinstance(res.body, (bytes, bytearray)) else str(res.body).encode(\"utf-8\")\n    return hashlib.sha256(body).hexdigest()",
+            "quote_verified": true,
+            "site": 0
+          },
+          {
+            "fn": "validator_fn",
+            "id": "J2",
+            "label": "ENUM_OR_BUCKET",
+            "line_start": 75,
+            "quote": "return val_sand.calldata == ldata.get(\"sha256\")",
+            "quote_verified": true,
+            "site": 0
+          }
+        ],
+        "mode": "CONTRACT",
+        "model_penalty": 0,
+        "n": 1,
+        "responses": [],
+        "score": 100,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 4334,
+        "source_sha256": "1079ccc7c3fac6c7e365b153c0ac1165bad0f7551d9c06e11df5283dab719d77",
+        "target_id": "2bac0b36b071",
+        "truncated": false,
+        "ts": 1793438777
+      }
+    },
+    "mixed_contract": {
+      "label": "MixedContract Fixture",
+      "series": "Fixtures",
+      "url": "https://raw.githubusercontent.com/hypercybers99/consensus-lint-fixtures/main/mixed_contract.py",
+      "tid": "4f74133a0a13",
+      "registrationTxHash": "0xb1787d0993a8ef6cd6700160984871072ec6f1885d38a4431b2edd59efc64e7f",
+      "registrationElapsed": 5.56,
+      "registrationAgreement": "3/5",
+      "auditTxHash": "0xdc5d041484a1bce7fa79cb444d9c2079200c65b4e64eafc2ae85e15fb9336217",
+      "auditElapsed": 12.11,
+      "auditAgreement": "3/5",
+      "summary": {
+        "id": "4f74133a0a13",
+        "label": "MixedContract Fixture",
+        "latest_grade": "B",
+        "latest_n": 1,
+        "latest_score": 86,
+        "latest_source_sha256": "7117023c4a289d65556f7c93eacec452c736bf2088ee51ca1a7101626b01f770",
+        "ref_kind": "MUTABLE_REF",
+        "truncated": false
+      },
+      "auditRecord": {
+        "at": "2026-10-31T09:26:59Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {
+          "CL15": {
+            "count": 1,
+            "items": [
+              {
+                "line": 27,
+                "snippet": "if not site_url.startswith(\"https://\"):"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MAJOR"
+          },
+          "CL16": {
+            "count": 1,
+            "items": [
+              {
+                "line": 21,
+                "snippet": "def update_profile(self, display_name: str, site_url: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          },
+          "CL17": {
+            "count": 1,
+            "items": [
+              {
+                "line": 35,
+                "snippet": "def get_all_profiles(self) -> list[str]:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          }
+        },
+        "grade": "B",
+        "judgements": [],
+        "mode": "CONTRACT",
+        "model_penalty": 0,
+        "n": 1,
+        "responses": [],
+        "score": 86,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 1320,
+        "source_sha256": "7117023c4a289d65556f7c93eacec452c736bf2088ee51ca1a7101626b01f770",
+        "target_id": "4f74133a0a13",
+        "truncated": false,
+        "ts": 1793438819
+      }
+    },
+    "bad_contract": {
+      "label": "BadContract Fixture",
+      "series": "Fixtures",
+      "url": "https://raw.githubusercontent.com/hypercybers99/consensus-lint-fixtures/main/bad_contract.py",
+      "tid": "c74c8288839d",
+      "registrationTxHash": "0x2bc8fccf4ef386e6bf834572bf1acbe4583739b2fb5978ed37d12e0daa792d70",
+      "registrationElapsed": 5.42,
+      "registrationAgreement": "4/5",
+      "auditTxHash": "0x750d98f5f98dc79cb0594951ba24fd4eaacb4a17af9a170f7a325539b14b0bda",
+      "auditElapsed": 38.8,
+      "auditAgreement": "3/5",
+      "summary": {
+        "id": "c74c8288839d",
+        "label": "BadContract Fixture",
+        "latest_grade": "F",
+        "latest_n": 1,
+        "latest_score": 0,
+        "latest_source_sha256": "394a711bae4fc8b8a45d5d1f1fef7497efd1ec294ee3b128d180201c026ad7e8",
+        "ref_kind": "MUTABLE_REF",
+        "truncated": false
+      },
+      "auditRecord": {
+        "at": "2026-10-31T09:27:28Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {
+          "CL01": {
+            "count": 1,
+            "items": [
+              {
+                "line": 1,
+                "snippet": "# v0.1.0"
+              }
+            ],
+            "method": "STRUCTURAL",
+            "severity": "MINOR"
+          },
+          "CL02": {
+            "count": 1,
+            "items": [
+              {
+                "line": 2,
+                "snippet": "# Intentionally invalid header and dependency line"
+              }
+            ],
+            "method": "STRUCTURAL",
+            "severity": "MAJOR"
+          },
+          "CL03": {
+            "count": 1,
+            "items": [
+              {
+                "line": 3,
+                "snippet": "# Non-ASCII character present: \u2022 (bullet)"
+              }
+            ],
+            "method": "STRUCTURAL",
+            "severity": "MINOR"
+          },
+          "CL05": {
+            "count": 1,
+            "items": [
+              {
+                "line": 16,
+                "snippet": "self.store[\"initialized\"] = \"true\""
+              }
+            ],
+            "method": "STRUCTURAL",
+            "severity": "MAJOR"
+          },
+          "CL06": {
+            "count": 1,
+            "items": [
+              {
+                "line": 19,
+                "snippet": "def unsafe_write(self, message: str, url: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          },
+          "CL07": {
+            "count": 1,
+            "items": [
+              {
+                "line": 54,
+                "snippet": "res = gl.eq_principle.strict_eq(bad_strict)"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MAJOR"
+          },
+          "CL08": {
+            "count": 2,
+            "items": [
+              {
+                "line": 33,
+                "snippet": "fetch_res = gl.nondet.web.get(url)"
+              },
+              {
+                "line": 37,
+                "snippet": "raw_model = gl.nondet.exec_prompt(prompt)"
+              }
+            ],
+            "method": "STRUCTURAL",
+            "severity": "MAJOR"
+          },
+          "CL09": {
+            "count": 1,
+            "items": [
+              {
+                "line": 60,
+                "snippet": "def validator_fn(leader_res):"
+              }
+            ],
+            "method": "STRUCTURAL",
+            "severity": "CRITICAL"
+          },
+          "CL10": {
+            "count": 1,
+            "items": [
+              {
+                "line": 60,
+                "snippet": "def validator_fn(leader_res):"
+              }
+            ],
+            "method": "STRUCTURAL",
+            "severity": "MAJOR"
+          },
+          "CL11": {
+            "count": 1,
+            "items": [
+              {
+                "line": 69,
+                "snippet": "return True"
+              }
+            ],
+            "method": "STRUCTURAL",
+            "severity": "MAJOR"
+          },
+          "CL12": {
+            "count": 1,
+            "items": [
+              {
+                "line": 40,
+                "snippet": "try:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MAJOR"
+          },
+          "CL13": {
+            "count": 1,
+            "items": [
+              {
+                "line": 30,
+                "snippet": "current_time = datetime.datetime.now()"
+              }
+            ],
+            "method": "STRUCTURAL",
+            "severity": "MAJOR"
+          },
+          "CL14": {
+            "count": 2,
+            "items": [
+              {
+                "line": 27,
+                "snippet": "assert len(url) > 0, \"url cannot be empty\""
+              },
+              {
+                "line": 24,
+                "snippet": "raise ValueError(\"invalid url prefix\")"
+              }
+            ],
+            "method": "STRUCTURAL",
+            "severity": "MINOR"
+          },
+          "CL15": {
+            "count": 1,
+            "items": [
+              {
+                "line": 22,
+                "snippet": "if not url.startswith(\"https://\"):"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MAJOR"
+          },
+          "CL16": {
+            "count": 1,
+            "items": [
+              {
+                "line": 19,
+                "snippet": "def unsafe_write(self, message: str, url: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          },
+          "CL17": {
+            "count": 1,
+            "items": [
+              {
+                "line": 74,
+                "snippet": "def get_all_records(self) -> list[str]:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          },
+          "CL18": {
+            "count": 1,
+            "items": [
+              {
+                "line": 37,
+                "snippet": "raw_model = gl.nondet.exec_prompt(prompt)"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "INFO"
+          }
+        },
+        "grade": "F",
+        "judgements": [
+          {
+            "fn": "validator_fn",
+            "id": "J1",
+            "label": "COMPARES_ONLY",
+            "line_start": 60,
+            "quote": "# CL09: does not independently recompute verdict, only checks leader data",
+            "quote_verified": true,
+            "site": 0
+          },
+          {
+            "fn": "validator_fn",
+            "id": "J2",
+            "label": "ENUM_OR_BUCKET",
+            "line_start": 60,
+            "quote": "valid = (data == \"LEADER_PAYLOAD\")",
+            "quote_verified": true,
+            "site": 0
+          },
+          {
+            "fn": "unsafe_write",
+            "id": "J3",
+            "label": "NOT_ISOLATED",
+            "line_start": 19,
+            "quote": "prompt = f\"Analyze this user message: {message}\"",
+            "quote_verified": true,
+            "site": 0
+          }
+        ],
+        "mode": "CONTRACT",
+        "model_penalty": 10,
+        "n": 1,
+        "responses": [],
+        "score": 0,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 2655,
+        "source_sha256": "394a711bae4fc8b8a45d5d1f1fef7497efd1ec294ee3b128d180201c026ad7e8",
+        "target_id": "c74c8288839d",
+        "truncated": false,
+        "ts": 1793438848
+      }
+    },
+    "not_a_contract": {
+      "label": "NotAContract Fixture",
+      "series": "Fixtures",
+      "url": "https://raw.githubusercontent.com/hypercybers99/consensus-lint-fixtures/main/not_a_contract.py",
+      "tid": "fc8f14409f6b",
+      "registrationTxHash": "0x31ba6d9603c23b8d708b1e2dad54bb1660f5ef6d6c6587fdcfe505b6a08a56a2",
+      "registrationElapsed": 8.72,
+      "registrationAgreement": "3/5",
+      "auditTxHash": "0xa230546f3353fed93962514515e23ca5518b64429e2585950b6c5dedc6cfd434",
+      "auditElapsed": 12.08,
+      "auditAgreement": "3/5",
+      "summary": {
+        "id": "fc8f14409f6b",
+        "label": "NotAContract Fixture",
+        "latest_grade": "N/A",
+        "latest_n": 1,
+        "latest_score": -1,
+        "latest_source_sha256": "a39c9aaa565ea200ebfe9ca01e32b7e7da64ea24b9753fe8d0ea6c27b8b1ef6b",
+        "ref_kind": "MUTABLE_REF",
+        "truncated": false
+      },
+      "auditRecord": {
+        "at": "2026-10-31T09:28:26Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {},
+        "grade": "N/A",
+        "judgements": [],
+        "mode": "NOT_A_CONTRACT",
+        "model_penalty": 0,
+        "n": 1,
+        "responses": [],
+        "score": -1,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 466,
+        "source_sha256": "a39c9aaa565ea200ebfe9ca01e32b7e7da64ea24b9753fe8d0ea6c27b8b1ef6b",
+        "target_id": "fc8f14409f6b",
+        "truncated": false,
+        "ts": 1793438906
+      }
+    },
+    "shell_like": {
+      "label": "ShellLike Large Fixture",
+      "series": "Fixtures",
+      "url": "https://raw.githubusercontent.com/hypercybers99/consensus-lint-fixtures/main/shell_like.py",
+      "tid": "dca608d38708",
+      "registrationTxHash": "0xab53bb3ab5efb73d8adbab4afb81706c2aee92555691134f2f5bfc2029f04de2",
+      "registrationElapsed": 8.86,
+      "registrationAgreement": "3/5",
+      "auditTxHash": "0xe6234c85dada1bffee2ba2a7c1b33ee5216034485a9511acaef670837712552f",
+      "auditElapsed": 12.1,
+      "auditAgreement": "3/5",
+      "summary": {
+        "id": "dca608d38708",
+        "label": "ShellLike Large Fixture",
+        "latest_grade": "B",
+        "latest_n": 1,
+        "latest_score": 89,
+        "latest_source_sha256": "8e099a2ad8b12f5b4ac4044ec6ad654d0b9969aa58e2e468c24cfbdc714267d7",
+        "ref_kind": "MUTABLE_REF",
+        "truncated": true
+      },
+      "auditRecord": {
+        "at": "2026-10-31T09:28:58Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {},
+        "grade": "B",
+        "judgements": [],
+        "mode": "CONTRACT",
+        "model_penalty": 0,
+        "n": 1,
+        "responses": [],
+        "score": 89,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 196016,
+        "source_sha256": "8e099a2ad8b12f5b4ac4044ec6ad654d0b9969aa58e2e468c24cfbdc714267d7",
+        "target_id": "dca608d38708",
+        "truncated": true,
+        "ts": 1793438938
+      }
+    }
+  },
+  "self_lint": {
+    "ConsensusLint": {
+      "label": "ConsensusLint Ledger Contract",
+      "series": "ConsensusLint Core",
+      "url": "https://raw.githubusercontent.com/hypercybers99/consensus-lint-genlayer/8b547e3a3257e5d24bf74463a5271c39d6bcb375/contracts/ConsensusLint.py",
+      "tid": "a5e2814115e4",
+      "registrationTxHash": "0x722b5d235239fcf8dc21b82309292c9e920abb8f63784933be5feb897316ff56",
+      "registrationElapsed": 6.44,
+      "registrationAgreement": "3/5",
+      "registrationVotes": {
+        "0x709a1dDECA594C16AB3864A00Eaa2BB1Cd9b5305": "idle",
+        "0x711353514049EAc21213834ADd07eF552aF394E6": "idle",
+        "0x8ADae333478F9D037c78b0E3E8279DdAAb20a1B3": "agree",
+        "0x8f1abcAF0fF10678Af925f83b2Bb8b3534c4b94b": "agree",
+        "0xe1626534791FC675ED813Cc2C89C427866526113": "agree"
+      },
+      "auditTxHash": "0x22cfe32c0ce4c7e621571e04a76943bea4eb6fe4b09ea0c89a65f9570a6c69a5",
+      "auditElapsed": 25.33,
+      "auditAgreement": "3/5",
+      "auditVotes": {
+        "0x29300188B54F5BFEE91542595611603b4B201008": "idle",
+        "0x37CD8552B86b2B662eCfb69C4A1253dBE41EB4C1": "agree",
+        "0x8ADae333478F9D037c78b0E3E8279DdAAb20a1B3": "agree",
+        "0xc675c2B7E1F066B7c1D2fe54EF7B76C91CdFa5F4": "idle",
+        "0xe1626534791FC675ED813Cc2C89C427866526113": "agree"
+      },
+      "summary": {
+        "id": "a5e2814115e4",
+        "label": "ConsensusLint Ledger Contract",
+        "latest_grade": "A",
+        "latest_n": 1,
+        "latest_score": 94,
+        "latest_source_sha256": "ce592840fda0a61d2f3d0ea39aaaa5ba2c6da0929ee9a6a7654cf7e74c0d3e25",
+        "ref_kind": "PINNED_COMMIT",
+        "truncated": false
+      },
+      "auditRecord": {
+        "at": "2026-11-09T13:02:54Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {
+          "CL06": {
+            "count": 1,
+            "items": [
+              {
+                "line": 1181,
+                "snippet": "def respond_to_finding(self, target_id: str, audit_n: int, rule_id: str, stance: str, note: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          },
+          "CL16": {
+            "count": 1,
+            "items": [
+              {
+                "line": 1181,
+                "snippet": "def respond_to_finding(self, target_id: str, audit_n: int, rule_id: str, stance: str, note: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          }
+        },
+        "grade": "A",
+        "judgements": [
+          {
+            "fn": "validator_fn",
+            "id": "J1",
+            "label": "RECOMPUTES",
+            "line_start": 1053,
+            "quote": "linter = _LinterEngine(norm_text)\n            try:\n                val_mode, val_findings, val_counts, val_call_sites = linter.run()",
+            "quote_verified": true,
+            "site": 0
+          },
+          {
+            "fn": "validator_fn",
+            "id": "J2",
+            "label": "ENUM_OR_BUCKET",
+            "line_start": 1053,
+            "quote": "if val_score != lead_data.get(\"score\"):\n                return False\n\n            if val_bucket != lead_data.get(\"penalty_bucket\"):",
+            "quote_verified": true,
+            "site": 0
+          },
+          {
+            "fn": "prompt_call",
+            "id": "J3",
+            "label": "UNCLEAR",
+            "line_start": 1005,
+            "quote": "",
+            "quote_verified": false,
+            "site": 0
+          },
+          {
+            "fn": "validator_fn",
+            "id": "J3",
+            "label": "UNCLEAR",
+            "line_start": 1053,
+            "quote": "",
+            "quote_verified": false,
+            "site": 1
+          }
+        ],
+        "mode": "CONTRACT",
+        "model_penalty": 0,
+        "n": 1,
+        "responses": [],
+        "score": 94,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 68032,
+        "source_sha256": "ce592840fda0a61d2f3d0ea39aaaa5ba2c6da0929ee9a6a7654cf7e74c0d3e25",
+        "target_id": "a5e2814115e4",
+        "truncated": false,
+        "ts": 1794229374
+      }
+    },
+    "HygieneBadges": {
+      "label": "HygieneBadges Contract",
+      "series": "ConsensusLint Core",
+      "url": "https://raw.githubusercontent.com/hypercybers99/consensus-lint-genlayer/8b547e3a3257e5d24bf74463a5271c39d6bcb375/contracts/HygieneBadges.py",
+      "tid": "ead8d85fa0f0",
+      "registrationTxHash": "0xa6f5a99d02a23cd2d9817eb0fd92cd0be694e76bc063af5fb70ec601a09ac916",
+      "registrationElapsed": 10.92,
+      "registrationAgreement": "3/5",
+      "registrationVotes": {
+        "0x2bB088e4E6Fd1faBBd23d93F38D01f28a954A49c": "agree",
+        "0x8f1abcAF0fF10678Af925f83b2Bb8b3534c4b94b": "idle",
+        "0xD0eD149D26E76cf49fB588c970E608E44Dd4DAB8": "agree",
+        "0xe1626534791FC675ED813Cc2C89C427866526113": "idle",
+        "0xf1EAD5E5f876eae701eF1881b42861079cd9A287": "agree"
+      },
+      "auditTxHash": "0x8a47d96342ec940756374087d38ab08fb6f9a118709a5e391566151d6b7b98ed",
+      "auditElapsed": 12.99,
+      "auditAgreement": "3/5",
+      "auditVotes": {
+        "0x0174b4D7494Be33F46B76976f6c9F94004F1b27f": "agree",
+        "0x709a1dDECA594C16AB3864A00Eaa2BB1Cd9b5305": "idle",
+        "0x722474B013fA39E5aA8785f927dCeB0e3F89815B": "agree",
+        "0x8ADae333478F9D037c78b0E3E8279DdAAb20a1B3": "idle",
+        "0xD0eD149D26E76cf49fB588c970E608E44Dd4DAB8": "agree"
+      },
+      "summary": {
+        "id": "ead8d85fa0f0",
+        "label": "HygieneBadges Contract",
+        "latest_grade": "A",
+        "latest_n": 1,
+        "latest_score": 94,
+        "latest_source_sha256": "6d2a48275d31556f42ac8fed0b0c91ecace9300e3f60592643b5bf98e3009923",
+        "ref_kind": "PINNED_COMMIT",
+        "truncated": false
+      },
+      "auditRecord": {
+        "at": "2026-11-09T13:03:40Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {
+          "CL06": {
+            "count": 1,
+            "items": [
+              {
+                "line": 165,
+                "snippet": "def refresh_badge(self, badge_id: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          },
+          "CL16": {
+            "count": 1,
+            "items": [
+              {
+                "line": 88,
+                "snippet": "def claim_badge(self, target_id: str, display_name: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          }
+        },
+        "grade": "A",
+        "judgements": [],
+        "mode": "CONTRACT",
+        "model_penalty": 0,
+        "n": 1,
+        "responses": [],
+        "score": 94,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 8990,
+        "source_sha256": "6d2a48275d31556f42ac8fed0b0c91ecace9300e3f60592643b5bf98e3009923",
+        "target_id": "ead8d85fa0f0",
+        "truncated": false,
+        "ts": 1794229420
+      }
+    }
+  },
+  "historical_targets": {
+    "citation_watch_v100": {
+      "label": "CitationWatch v1.0.0",
+      "series": "CitationWatch",
+      "url": "https://raw.githubusercontent.com/hypercybers99/citation-watch-genlayer/db7efa656f3ceb14d40b3607f1037fdcbcfdf6ef/contracts/SourceDriftLedger.py",
+      "tid": "f96c34d309a7",
+      "registrationTxHash": "0x662daa8148d1d67140b9dc60e899838e3732e1b73e19a9a1179083e0b40461be",
+      "registrationElapsed": 8.79,
+      "registrationAgreement": "3/5",
+      "auditTxHash": "0xce5f7aa2924b57130c2f7d38392d8d8d520bc082a17edb378032fbc8ccb1337f",
+      "auditElapsed": 185,
+      "auditAgreement": "3/5",
+      "summary": {
+        "id": "f96c34d309a7",
+        "label": "CitationWatch v1.0.0",
+        "latest_grade": "D",
+        "latest_n": 1,
+        "latest_score": 56,
+        "latest_source_sha256": "e3b4bf9ce11e5f418126585820916f442bd22f23610bbfdb3a3de8065eeb3bd8",
+        "ref_kind": "PINNED_COMMIT",
+        "truncated": false
+      },
+      "auditRecord": {
+        "at": "2026-10-31T09:31:08Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {
+          "CL06": {
+            "count": 1,
+            "items": [
+              {
+                "line": 678,
+                "snippet": "def audit_citation(self, citation_id: str, target_url: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          },
+          "CL07": {
+            "count": 2,
+            "items": [
+              {
+                "line": 621,
+                "snippet": "consensus_res = gl.eq_principle.strict_eq(run_baseline_fetch)"
+              },
+              {
+                "line": 921,
+                "snippet": "consensus_res = gl.eq_principle.strict_eq(run_audit_evaluation)"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MAJOR"
+          },
+          "CL12": {
+            "count": 3,
+            "items": [
+              {
+                "line": 501,
+                "snippet": "try:"
+              },
+              {
+                "line": 515,
+                "snippet": "try:"
+              },
+              {
+                "line": 578,
+                "snippet": "try:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MAJOR"
+          },
+          "CL16": {
+            "count": 5,
+            "items": [
+              {
+                "line": 526,
+                "snippet": "def register_citation(self, label: str, baseline_url: str, quotes_json: str) -> None:"
+              },
+              {
+                "line": 526,
+                "snippet": "def register_citation(self, label: str, baseline_url: str, quotes_json: str) -> None:"
+              },
+              {
+                "line": 526,
+                "snippet": "def register_citation(self, label: str, baseline_url: str, quotes_json: str) -> None:"
+              },
+              {
+                "line": 678,
+                "snippet": "def audit_citation(self, citation_id: str, target_url: str) -> None:"
+              },
+              {
+                "line": 678,
+                "snippet": "def audit_citation(self, citation_id: str, target_url: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          }
+        },
+        "grade": "D",
+        "judgements": [
+          {
+            "fn": "run_audit_evaluation",
+            "id": "J3",
+            "label": "UNCLEAR",
+            "line_start": 721,
+            "quote": "",
+            "quote_verified": false,
+            "site": 0
+          }
+        ],
+        "mode": "CONTRACT",
+        "model_penalty": 0,
+        "n": 1,
+        "responses": [],
+        "score": 56,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 41891,
+        "source_sha256": "e3b4bf9ce11e5f418126585820916f442bd22f23610bbfdb3a3de8065eeb3bd8",
+        "target_id": "f96c34d309a7",
+        "truncated": false,
+        "ts": 1793439068
+      }
+    },
+    "citation_watch_v120": {
+      "label": "CitationWatch v1.2.0",
+      "series": "CitationWatch",
+      "url": "https://raw.githubusercontent.com/hypercybers99/citation-watch-genlayer/7726ce992fd39ac1239165c02e527456f052a697/contracts/SourceDriftLedger.py",
+      "tid": "dabbcb2fcd4e",
+      "registrationTxHash": "0xc3ee29a525f72338fbf8250876dadd7417ac8af3e84015f22cc8ce18b7c43849",
+      "registrationElapsed": 5.58,
+      "registrationAgreement": "3/5",
+      "auditTxHash": "0x25249c6730c06470c16ea1aac861266d64b6528fc7d8658fb92a7ec3591c6360",
+      "auditElapsed": 95.87,
+      "auditAgreement": "3/5",
+      "summary": {
+        "id": "dabbcb2fcd4e",
+        "label": "CitationWatch v1.2.0",
+        "latest_grade": "C",
+        "latest_n": 1,
+        "latest_score": 78,
+        "latest_source_sha256": "d5598c5e118d8411e87ef03f637950dc147799c94167ab8b0a70dd19c2215c8a",
+        "ref_kind": "PINNED_COMMIT",
+        "truncated": false
+      },
+      "auditRecord": {
+        "at": "2026-10-31T09:38:39Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {
+          "CL06": {
+            "count": 1,
+            "items": [
+              {
+                "line": 907,
+                "snippet": "def audit_citation(self, citation_id: str, target_url: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          },
+          "CL12": {
+            "count": 1,
+            "items": [
+              {
+                "line": 561,
+                "snippet": "try:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MAJOR"
+          },
+          "CL16": {
+            "count": 5,
+            "items": [
+              {
+                "line": 725,
+                "snippet": "def register_citation(self, label: str, baseline_url: str, quotes_json: str) -> None:"
+              },
+              {
+                "line": 725,
+                "snippet": "def register_citation(self, label: str, baseline_url: str, quotes_json: str) -> None:"
+              },
+              {
+                "line": 725,
+                "snippet": "def register_citation(self, label: str, baseline_url: str, quotes_json: str) -> None:"
+              },
+              {
+                "line": 907,
+                "snippet": "def audit_citation(self, citation_id: str, target_url: str) -> None:"
+              },
+              {
+                "line": 907,
+                "snippet": "def audit_citation(self, citation_id: str, target_url: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          }
+        },
+        "grade": "C",
+        "judgements": [
+          {
+            "fn": "validator_reg_eval",
+            "id": "J1",
+            "label": "RECOMPUTES",
+            "line_start": 794,
+            "quote": "val_base_sha256 = hashlib.sha256(val_norm.encode(\"utf-8\")).hexdigest()\n            return val_base_sha256 == leader_base_sha256",
+            "quote_verified": true,
+            "site": 0
+          },
+          {
+            "fn": "validator_reg_eval",
+            "id": "J2",
+            "label": "ENUM_OR_BUCKET",
+            "line_start": 794,
+            "quote": "val_base_sha256 = hashlib.sha256(val_norm.encode(\"utf-8\")).hexdigest()\n            return val_base_sha256 == leader_base_sha256",
+            "quote_verified": true,
+            "site": 0
+          },
+          {
+            "fn": "validator_audit_eval",
+            "id": "J1",
+            "label": "RECOMPUTES",
+            "line_start": 1038,
+            "quote": "6. For model elements, validator runs its OWN model classification in sandbox,\n               and verifies element statuses equal leader's statuses.\n            7. Verifies cited quote is verbatim substring of validator's re-derived passages.",
+            "quote_verified": true,
+            "site": 1
+          },
+          {
+            "fn": "validator_audit_eval",
+            "id": "J2",
+            "label": "ENUM_OR_BUCKET",
+            "line_start": 1038,
+            "quote": "9. Verifies canonical enumeration summary matches validator's expected canonical string.\n            \"\"\"",
+            "quote_verified": true,
+            "site": 1
+          },
+          {
+            "fn": "_classify_unresolved_elements",
+            "id": "J3",
+            "label": "PARTIAL",
+            "line_start": 511,
+            "quote": "\"PRESENTED PASSAGES:\\n\"\n        f\"{passages_block}\\n\\n\"\n        \"ELEMENTS TO CLASSIFY:\\n\"",
+            "quote_verified": true,
+            "site": 0
+          }
+        ],
+        "mode": "CONTRACT",
+        "model_penalty": 2,
+        "n": 1,
+        "responses": [],
+        "score": 78,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 56232,
+        "source_sha256": "d5598c5e118d8411e87ef03f637950dc147799c94167ab8b0a70dd19c2215c8a",
+        "target_id": "dabbcb2fcd4e",
+        "truncated": false,
+        "ts": 1793439519
+      }
+    },
+    "commitment_ledger_v310": {
+      "label": "CommitmentLedger v3.1.0",
+      "series": "CommitmentLedger",
+      "url": "https://raw.githubusercontent.com/hypercybers99/commitment-ledger-genlayer/616d92d6abaae6771b3cdc6bdc738150a1f324c3/contracts/CommitmentLedger.py",
+      "tid": "58e4436e4d50",
+      "registrationTxHash": "0x902d4071ea59aaf7ced4c2488ff07077c3dccefea119fea51780d159769e44f2",
+      "registrationElapsed": 8.61,
+      "registrationAgreement": "3/5",
+      "auditTxHash": "0x8932707a5ebcadaf5eab3a01299af437c9d667643adf4e68b4b894d318fb060b",
+      "auditElapsed": 25.74,
+      "auditAgreement": "3/5",
+      "summary": {
+        "id": "58e4436e4d50",
+        "label": "CommitmentLedger v3.1.0",
+        "latest_grade": "C",
+        "latest_n": 1,
+        "latest_score": 74,
+        "latest_source_sha256": "9380175f322387696259a522483239be209d58b8e21fd4928cadf4ab46702e0e",
+        "ref_kind": "PINNED_COMMIT",
+        "truncated": false
+      },
+      "auditRecord": {
+        "at": "2026-10-31T09:40:36Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {
+          "CL06": {
+            "count": 3,
+            "items": [
+              {
+                "line": 394,
+                "snippet": "def register_commitment("
+              },
+              {
+                "line": 537,
+                "snippet": "def submit_resolution(self, commitment_id: str, source_url: str) -> None:"
+              },
+              {
+                "line": 580,
+                "snippet": "def challenge_resolution(self, commitment_id: str, reason: str, source_url: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          },
+          "CL12": {
+            "count": 1,
+            "items": [
+              {
+                "line": 374,
+                "snippet": "try:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MAJOR"
+          },
+          "CL16": {
+            "count": 5,
+            "items": [
+              {
+                "line": 394,
+                "snippet": "def register_commitment("
+              },
+              {
+                "line": 394,
+                "snippet": "def register_commitment("
+              },
+              {
+                "line": 394,
+                "snippet": "def register_commitment("
+              },
+              {
+                "line": 537,
+                "snippet": "def submit_resolution(self, commitment_id: str, source_url: str) -> None:"
+              },
+              {
+                "line": 537,
+                "snippet": "def submit_resolution(self, commitment_id: str, source_url: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          }
+        },
+        "grade": "C",
+        "judgements": [
+          {
+            "fn": "run_extraction",
+            "id": "J3",
+            "label": "UNCLEAR",
+            "line_start": 436,
+            "quote": "",
+            "quote_verified": false,
+            "site": 0
+          },
+          {
+            "fn": "run_nondet_evaluation",
+            "id": "J3",
+            "label": "UNCLEAR",
+            "line_start": 725,
+            "quote": "",
+            "quote_verified": false,
+            "site": 1
+          }
+        ],
+        "mode": "CONTRACT",
+        "model_penalty": 0,
+        "n": 1,
+        "responses": [],
+        "score": 74,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 45034,
+        "source_sha256": "9380175f322387696259a522483239be209d58b8e21fd4928cadf4ab46702e0e",
+        "target_id": "58e4436e4d50",
+        "truncated": false,
+        "ts": 1793439636
+      }
+    }
+  },
+  "maintainer_responses": [
+    {
+      "tid": "c74c8288839d",
+      "n": 1,
+      "rule_id": "CL05",
+      "stance": "FIXED_NEXT",
+      "note": "Acknowledged: TreeMap lazy initialization will be adopted in next patch.",
+      "txHash": "0x2e21aa846afa2188142dc4c7dda4f273898078045a87cff0f245b9ad4269e0f6",
+      "elapsed": 11.97,
+      "agreement": "4/5",
+      "stored_responses": [
+        {
+          "at": "2026-10-31T09:41:26Z",
+          "by": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+          "note": "Acknowledged: TreeMap lazy initialization will be adopted in next patch.",
+          "rule_id": "CL05",
+          "stance": "FIXED_NEXT"
+        }
+      ]
+    }
+  ],
+  "badges": {
+    "good_contract": {
+      "badge_id": "530360cf70b6",
+      "claimTxHash": "0x1bdffe953a4d33105c861a4137e8749b690ddaec76d056e95add61e88b86a565",
+      "agreement": "3/5",
+      "elapsed": 8.59,
+      "record": {
+        "badge_history": [
+          {
+            "at": "2026-10-31T09:41:08Z",
+            "grade": "A",
+            "score": 100,
+            "source_sha256": "1079ccc7c3fac6c7e365b153c0ac1165bad0f7551d9c06e11df5283dab719d77",
+            "transition": "INITIAL"
+          }
+        ],
+        "claimed_at": "2026-10-31T09:41:08Z",
+        "claimer": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "current_grade": "A",
+        "current_score": 100,
+        "current_status": "BADGE_A",
+        "display_name": "GoodContract Clean Hygiene Badge",
+        "id": "530360cf70b6",
+        "target_id": "2bac0b36b071"
+      }
+    }
+  },
+  "negative_tests": [
+    {
+      "testId": "NEG-BADGE-TRUNC",
+      "description": "Refuse badge issuance for truncated audit (ShellLike)",
+      "txHash": "0x3d4d7cf92c7dcf51dbdaac3709ba07a4f755feab6cac44d4487fb99c73ae1ffe",
+      "status": "ACCEPTED",
+      "leaderExecution": "ERROR",
+      "raw_leader_b64": "AWNhbm5vdCBjbGFpbSBiYWRnZSBmb3IgdHJ1bmNhdGVkIGF1ZGl0",
+      "raw_leader_hex": "0x0163616e6e6f7420636c61696d20626164676520666f72207472756e6361746564206175646974",
+      "decodedError": "cannot claim badge for truncated audit",
+      "expectedPattern": "cannot claim badge for truncated audit",
+      "passed": true
+    },
+    {
+      "testId": "NEG-RESP-01",
+      "description": "Reject finding response from non-registrant sender",
+      "txHash": "0xc2deb05c4f5a873e44b4e746d1ce0f3be0e3797ea52011187f124fbf188ce540",
+      "status": "ACCEPTED",
+      "leaderExecution": "ERROR",
+      "raw_leader_b64": "AW9ubHkgdGhlIHJlZ2lzdHJhbnQgY2FuIGRvIHRoaXM=",
+      "raw_leader_hex": "0x016f6e6c79207468652072656769737472616e742063616e20646f2074686973",
+      "decodedError": "only the registrant can do this",
+      "expectedPattern": "only the registrant can do this",
+      "passed": true
+    },
+    {
+      "testId": "NEG-RESP-02",
+      "description": "Reject finding response with invalid stance",
+      "txHash": "0x0873cc1c919e86ff88543a84f09643ba336451d38409e8990659cd0e36a8e94c",
+      "status": "ACCEPTED",
+      "leaderExecution": "ERROR",
+      "raw_leader_b64": "AWludmFsaWQgc3RhbmNl",
+      "raw_leader_hex": "0x01696e76616c6964207374616e6365",
+      "decodedError": "invalid stance",
+      "expectedPattern": "invalid stance",
+      "passed": true
+    },
+    {
+      "testId": "NEG-RESP-03",
+      "description": "Reject finding response for rule not present in audit",
+      "txHash": "0xec32d000de0ac00d3e4f63ff7e5331e5b1b93591f20d4a9ccef3471bb32f691f",
+      "status": "ACCEPTED",
+      "leaderExecution": "ERROR",
+      "raw_leader_b64": "AWZpbmRpbmcgbm90IHByZXNlbnQgaW4gYXVkaXQ=",
+      "raw_leader_hex": "0x0166696e64696e67206e6f742070726573656e7420696e206175646974",
+      "decodedError": "finding not present in audit",
+      "expectedPattern": "finding not present in audit",
+      "passed": true
+    }
+  ],
+  "unexpected_or_superseded_runs": [
+    {
+      "target": "NotAContract Fixture (superseded deployment disagreement)",
+      "txHash": "0x2566ae4e898c07d1c08481abeb3fe94b0a3ae7d4296120e9b4c82a3d99410105",
+      "status": "UNDETERMINED",
+      "result_name": "MAJORITY_DISAGREE",
+      "votes_summary": "idle, disagree, disagree, idle, disagree",
+      "agreement": "0/5",
+      "reason": "Observed on-chain consensus disagreement: validators voted 0/5, leading to status UNDETERMINED (MAJORITY_DISAGREE)."
+    },
+    {
+      "target": "CitationWatch v1.2.0 (attempt 1)",
+      "txHash": "0x93bcc19aa51136ff997ccdc2a459f357be8e0441bff45185af2bb0850032e06b",
+      "status": "FINALIZED",
+      "result_name": "MAJORITY_DISAGREE",
+      "votes_summary": "AGREE, DISAGREE, DISAGREE, AGREE, DISAGREE",
+      "agreement": "2/5",
+      "reason": "Observed on-chain consensus disagreement: 3 validators voted DISAGREE in round 3, leading to status UNDETERMINED (MAJORITY_DISAGREE). Real agreement 2/5."
+    }
+  ],
+  "ecosystem_views": {
+    "board": {
+      "best": [
+        {
+          "grade": "A",
+          "id": "2bac0b36b071",
+          "label": "GoodContract Fixture",
+          "score": 100
+        },
+        {
+          "grade": "A",
+          "id": "d694b3d29de5",
+          "label": "ConsensusLint Ledger Contract",
+          "score": 94
+        },
+        {
+          "grade": "A",
+          "id": "60285d3dfb85",
+          "label": "HygieneBadges Contract",
+          "score": 94
+        },
+        {
+          "grade": "A",
+          "id": "a5e2814115e4",
+          "label": "ConsensusLint Ledger Contract",
+          "score": 94
+        },
+        {
+          "grade": "A",
+          "id": "ead8d85fa0f0",
+          "label": "HygieneBadges Contract",
+          "score": 94
+        },
+        {
+          "grade": "B",
+          "id": "4f74133a0a13",
+          "label": "MixedContract Fixture",
+          "score": 86
+        },
+        {
+          "grade": "C",
+          "id": "dabbcb2fcd4e",
+          "label": "CitationWatch v1.2.0",
+          "score": 78
+        },
+        {
+          "grade": "C",
+          "id": "58e4436e4d50",
+          "label": "CommitmentLedger v3.1.0",
+          "score": 74
+        },
+        {
+          "grade": "D",
+          "id": "f96c34d309a7",
+          "label": "CitationWatch v1.0.0",
+          "score": 56
+        },
+        {
+          "grade": "F",
+          "id": "c74c8288839d",
+          "label": "BadContract Fixture",
+          "score": 0
+        }
+      ],
+      "most_improved": [],
+      "partial": [
+        {
+          "grade": "B",
+          "id": "dca608d38708",
+          "label": "ShellLike Large Fixture",
+          "partial": true,
+          "score": 89
+        }
+      ]
+    },
+    "meta": {
+      "audits_total": "12",
+      "nonce": "12",
+      "targets_scored_total": "11",
+      "targets_total": "12"
+    }
+  },
+  "superseded_self_lint_v100": {
+    "ConsensusLint": {
+      "label": "ConsensusLint Ledger Contract",
+      "series": "ConsensusLint Core",
+      "url": "https://raw.githubusercontent.com/hypercybers99/consensus-lint-genlayer/main/contracts/ConsensusLint.py",
+      "tid": "d694b3d29de5",
+      "registrationTxHash": "0x9758f53cf57b962138b9015aa7f5d1b2f1f5eb7a8a9910df62fee1dc74292509",
+      "registrationElapsed": 8.8,
+      "registrationAgreement": "3/5",
+      "auditTxHash": "0xa420f016e573f7dc37bb6d3e1bc2a179b5872890e5086bdbb7850152b2ae6a97",
+      "auditElapsed": 45.6,
+      "auditAgreement": "3/5",
+      "summary": {
+        "id": "d694b3d29de5",
+        "label": "ConsensusLint Ledger Contract",
+        "latest_grade": "A",
+        "latest_n": 1,
+        "latest_score": 94,
+        "latest_source_sha256": "04337cfc91fe45f76042dba860adf4d9f1567e68fabb525838fa7dffaf4d313b",
+        "ref_kind": "MUTABLE_REF",
+        "truncated": false
+      },
+      "auditRecord": {
+        "at": "2026-10-31T09:29:30Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {
+          "CL06": {
+            "count": 1,
+            "items": [
+              {
+                "line": 1165,
+                "snippet": "def respond_to_finding(self, target_id: str, audit_n: int, rule_id: str, stance: str, note: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          },
+          "CL16": {
+            "count": 1,
+            "items": [
+              {
+                "line": 1165,
+                "snippet": "def respond_to_finding(self, target_id: str, audit_n: int, rule_id: str, stance: str, note: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          }
+        },
+        "grade": "A",
+        "judgements": [
+          {
+            "fn": "validator_fn",
+            "id": "J1",
+            "label": "UNCLEAR",
+            "line_start": 1047,
+            "quote": "",
+            "quote_verified": false,
+            "site": 0
+          },
+          {
+            "fn": "validator_fn",
+            "id": "J2",
+            "label": "ENUM_OR_BUCKET",
+            "line_start": 1047,
+            "quote": "if val_bucket != lead_data.get(\"penalty_bucket\"):\n                return False",
+            "quote_verified": true,
+            "site": 0
+          },
+          {
+            "fn": "prompt_call",
+            "id": "J3",
+            "label": "UNCLEAR",
+            "line_start": 1001,
+            "quote": "",
+            "quote_verified": false,
+            "site": 0
+          },
+          {
+            "fn": "validator_fn",
+            "id": "J3",
+            "label": "UNCLEAR",
+            "line_start": 1047,
+            "quote": "",
+            "quote_verified": false,
+            "site": 1
+          }
+        ],
+        "mode": "CONTRACT",
+        "model_penalty": 0,
+        "n": 1,
+        "responses": [],
+        "score": 94,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 66505,
+        "source_sha256": "04337cfc91fe45f76042dba860adf4d9f1567e68fabb525838fa7dffaf4d313b",
+        "target_id": "d694b3d29de5",
+        "truncated": false,
+        "ts": 1793438970
+      }
+    },
+    "HygieneBadges": {
+      "label": "HygieneBadges Contract",
+      "series": "ConsensusLint Core",
+      "url": "https://raw.githubusercontent.com/hypercybers99/consensus-lint-genlayer/main/contracts/HygieneBadges.py",
+      "tid": "60285d3dfb85",
+      "registrationTxHash": "0x826856831ae04e0384e5a7fafb58dde93e551c5bbd8480454931997e64364863",
+      "registrationElapsed": 8.85,
+      "registrationAgreement": "3/5",
+      "auditTxHash": "0x5dc8b103f6eeff5783578cf907b9559c5e222fe1a74c88f6784268a5e7073904",
+      "auditElapsed": 11.96,
+      "auditAgreement": "3/5",
+      "summary": {
+        "id": "60285d3dfb85",
+        "label": "HygieneBadges Contract",
+        "latest_grade": "A",
+        "latest_n": 1,
+        "latest_score": 94,
+        "latest_source_sha256": "64181bc3a3965e9427039a8dec504f0c25aeb4e7e9186b54ba426aadb5bb48b8",
+        "ref_kind": "MUTABLE_REF",
+        "truncated": false
+      },
+      "auditRecord": {
+        "at": "2026-10-31T09:30:36Z",
+        "auditor": "0xe2d9062adc5f4b6061788996f859b224a7a8745c",
+        "findings": {
+          "CL06": {
+            "count": 1,
+            "items": [
+              {
+                "line": 161,
+                "snippet": "def refresh_badge(self, badge_id: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          },
+          "CL16": {
+            "count": 1,
+            "items": [
+              {
+                "line": 88,
+                "snippet": "def claim_badge(self, target_id: str, display_name: str) -> None:"
+              }
+            ],
+            "method": "HEURISTIC",
+            "severity": "MINOR"
+          }
+        },
+        "grade": "A",
+        "judgements": [],
+        "mode": "CONTRACT",
+        "model_penalty": 0,
+        "n": 1,
+        "responses": [],
+        "score": 94,
+        "sdk_pin": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+        "source_bytes": 8833,
+        "source_sha256": "64181bc3a3965e9427039a8dec504f0c25aeb4e7e9186b54ba426aadb5bb48b8",
+        "target_id": "60285d3dfb85",
+        "truncated": false,
+        "ts": 1793439036
+      }
+    }
+  }
+}

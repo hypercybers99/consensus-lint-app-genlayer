@@ -1,0 +1,74 @@
+{
+  "measurementDate": "2026-11-09T13:38:19.599Z",
+  "network": "GenLayer Studionet (Preview)",
+  "chainId": 61999,
+  "rpcUrl": "https://studio.genlayer.com/api",
+  "observation": "Transactions executed successfully on GenLayer Studionet (Preview) with 0 GEN balance. Zero fees deducted.",
+  "accountsTested": [
+    {
+      "label": "Account 1 (Registrant)",
+      "address": "0xd0F85657aA701032430A7D0d4Eb9CFa70795D3EE",
+      "initialBalanceWei": "0",
+      "finalBalanceWei": "0",
+      "transactionsExecuted": 3,
+      "allTransactionsAccepted": true
+    },
+    {
+      "label": "Account 2 (Stranger)",
+      "address": "0x6dED88089F79F6ed49f7F7D974b4Ae493d62Bcdd",
+      "initialBalanceWei": "0",
+      "finalBalanceWei": "0",
+      "transactionsExecuted": 1,
+      "revertHandledWithoutFeeFailure": true
+    }
+  ],
+  "operationsMeasured": [
+    {
+      "action": "register_target",
+      "sender": "0xd0F85657aA701032430A7D0d4Eb9CFa70795D3EE",
+      "targetId": "01c61272b3eb",
+      "txHash": "0xf7d60e8d5d35bd963a1ebba95fad8ab2a8c99fd92b4d7b349554016699e3e445",
+      "rawStatus": "ACCEPTED",
+      "agreement": "3/5",
+      "elapsedSeconds": 5.84,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied",
+      "userError": null
+    },
+    {
+      "action": "audit_target",
+      "sender": "0xd0F85657aA701032430A7D0d4Eb9CFa70795D3EE",
+      "targetId": "01c61272b3eb",
+      "txHash": "0x1d74f971626e5af43a8200239b2475e2782e7fcf1c44dca4ad82588bf08513fa",
+      "rawStatus": "ACCEPTED",
+      "agreement": "3/5",
+      "elapsedSeconds": 15.27,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied",
+      "auditScore": 94,
+      "auditGrade": "A",
+      "truncated": false
+    },
+    {
+      "action": "respond_to_finding",
+      "sender": "0xd0F85657aA701032430A7D0d4Eb9CFa70795D3EE",
+      "targetId": "01c61272b3eb",
+      "ruleId": "CL06",
+      "txHash": "0x6af85be74e3f741f510e6b03298a9618b98feca7aca2ea60112eb0722dfb3724",
+      "rawStatus": "ACCEPTED",
+      "agreement": "5/5",
+      "elapsedSeconds": 5.34,
+      "outcome": "Accepted by validators (5/5 agreed) - state applied"
+    },
+    {
+      "action": "unauthorized_respond_to_finding_revert",
+      "sender": "0x6dED88089F79F6ed49f7F7D974b4Ae493d62Bcdd",
+      "targetId": "01c61272b3eb",
+      "txHash": "0x43b9cd0e9b3d4e4e93c3ad5da77a4e797745abedfbf92b8fa11ba840da609009",
+      "rawStatus": "ACCEPTED",
+      "agreement": "3/5",
+      "elapsedSeconds": 8.8,
+      "outcome": "Reverted - state not applied (3/5 agreed on the revert)",
+      "expectedRevert": "only the registrant can do this",
+      "actualRevert": "only the registrant can do this"
+    }
+  ]
+}

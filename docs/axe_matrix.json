@@ -1,0 +1,262 @@
+{
+  "scannedAt": "2026-11-09T13:41:49.152Z",
+  "totalRuns": 32,
+  "results": [
+    {
+      "route": "/",
+      "name": "Dashboard",
+      "viewport": "390x667 (mobile-portrait)",
+      "violationsCount": 0,
+      "passesCount": 20,
+      "violations": []
+    },
+    {
+      "route": "/",
+      "name": "Dashboard",
+      "viewport": "500x400 (compact-landscape)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/",
+      "name": "Dashboard",
+      "viewport": "630x300 (tablet-shallow)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/",
+      "name": "Dashboard",
+      "viewport": "1280x800 (desktop)",
+      "violationsCount": 0,
+      "passesCount": 18,
+      "violations": []
+    },
+    {
+      "route": "/board",
+      "name": "Leaderboard",
+      "viewport": "390x667 (mobile-portrait)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/board",
+      "name": "Leaderboard",
+      "viewport": "500x400 (compact-landscape)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/board",
+      "name": "Leaderboard",
+      "viewport": "630x300 (tablet-shallow)",
+      "violationsCount": 0,
+      "passesCount": 18,
+      "violations": []
+    },
+    {
+      "route": "/board",
+      "name": "Leaderboard",
+      "viewport": "1280x800 (desktop)",
+      "violationsCount": 0,
+      "passesCount": 18,
+      "violations": []
+    },
+    {
+      "route": "/register",
+      "name": "Register",
+      "viewport": "390x667 (mobile-portrait)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/register",
+      "name": "Register",
+      "viewport": "500x400 (compact-landscape)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/register",
+      "name": "Register",
+      "viewport": "630x300 (tablet-shallow)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/register",
+      "name": "Register",
+      "viewport": "1280x800 (desktop)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/rules",
+      "name": "Rules",
+      "viewport": "390x667 (mobile-portrait)",
+      "violationsCount": 0,
+      "passesCount": 18,
+      "violations": []
+    },
+    {
+      "route": "/rules",
+      "name": "Rules",
+      "viewport": "500x400 (compact-landscape)",
+      "violationsCount": 0,
+      "passesCount": 18,
+      "violations": []
+    },
+    {
+      "route": "/rules",
+      "name": "Rules",
+      "viewport": "630x300 (tablet-shallow)",
+      "violationsCount": 0,
+      "passesCount": 18,
+      "violations": []
+    },
+    {
+      "route": "/rules",
+      "name": "Rules",
+      "viewport": "1280x800 (desktop)",
+      "violationsCount": 0,
+      "passesCount": 18,
+      "violations": []
+    },
+    {
+      "route": "/badges",
+      "name": "Badges",
+      "viewport": "390x667 (mobile-portrait)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/badges",
+      "name": "Badges",
+      "viewport": "500x400 (compact-landscape)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/badges",
+      "name": "Badges",
+      "viewport": "630x300 (tablet-shallow)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/badges",
+      "name": "Badges",
+      "viewport": "1280x800 (desktop)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/method",
+      "name": "Methodology",
+      "viewport": "390x667 (mobile-portrait)",
+      "violationsCount": 0,
+      "passesCount": 20,
+      "violations": []
+    },
+    {
+      "route": "/method",
+      "name": "Methodology",
+      "viewport": "500x400 (compact-landscape)",
+      "violationsCount": 0,
+      "passesCount": 20,
+      "violations": []
+    },
+    {
+      "route": "/method",
+      "name": "Methodology",
+      "viewport": "630x300 (tablet-shallow)",
+      "violationsCount": 0,
+      "passesCount": 20,
+      "violations": []
+    },
+    {
+      "route": "/method",
+      "name": "Methodology",
+      "viewport": "1280x800 (desktop)",
+      "violationsCount": 0,
+      "passesCount": 19,
+      "violations": []
+    },
+    {
+      "route": "/evidence",
+      "name": "Evidence",
+      "viewport": "390x667 (mobile-portrait)",
+      "violationsCount": 0,
+      "passesCount": 21,
+      "violations": []
+    },
+    {
+      "route": "/evidence",
+      "name": "Evidence",
+      "viewport": "500x400 (compact-landscape)",
+      "violationsCount": 0,
+      "passesCount": 21,
+      "violations": []
+    },
+    {
+      "route": "/evidence",
+      "name": "Evidence",
+      "viewport": "630x300 (tablet-shallow)",
+      "violationsCount": 0,
+      "passesCount": 21,
+      "violations": []
+    },
+    {
+      "route": "/evidence",
+      "name": "Evidence",
+      "viewport": "1280x800 (desktop)",
+      "violationsCount": 0,
+      "passesCount": 20,
+      "violations": []
+    },
+    {
+      "route": "/wallet",
+      "name": "Wallet",
+      "viewport": "390x667 (mobile-portrait)",
+      "violationsCount": 0,
+      "passesCount": 22,
+      "violations": []
+    },
+    {
+      "route": "/wallet",
+      "name": "Wallet",
+      "viewport": "500x400 (compact-landscape)",
+      "violationsCount": 0,
+      "passesCount": 22,
+      "violations": []
+    },
+    {
+      "route": "/wallet",
+      "name": "Wallet",
+      "viewport": "630x300 (tablet-shallow)",
+      "violationsCount": 0,
+      "passesCount": 22,
+      "violations": []
+    },
+    {
+      "route": "/wallet",
+      "name": "Wallet",
+      "viewport": "1280x800 (desktop)",
+      "violationsCount": 0,
+      "passesCount": 22,
+      "violations": []
+    }
+  ]
+}
