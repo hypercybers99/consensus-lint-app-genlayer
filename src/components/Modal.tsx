@@ -40,21 +40,30 @@ export const Modal: React.FC<ModalProps> = ({
       }
 
       if (e.key === 'Tab' && modalRef.current) {
-        const focusableElements = modalRef.current.querySelectorAll<HTMLElement>(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        const rawElements = Array.from(
+          modalRef.current.querySelectorAll<HTMLElement>(
+            'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          )
         );
-        if (focusableElements.length === 0) return;
+        const focusableElements = rawElements.filter(
+          (el) => !el.hasAttribute('disabled') && (el.offsetWidth > 0 || el.offsetHeight > 0 || el.getClientRects().length > 0)
+        );
+        if (focusableElements.length === 0) {
+          e.preventDefault();
+          modalRef.current.focus();
+          return;
+        }
 
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
 
         if (e.shiftKey) {
-          if (document.activeElement === firstElement) {
+          if (document.activeElement === firstElement || !modalRef.current.contains(document.activeElement)) {
             e.preventDefault();
             lastElement.focus();
           }
         } else {
-          if (document.activeElement === lastElement) {
+          if (document.activeElement === lastElement || !modalRef.current.contains(document.activeElement)) {
             e.preventDefault();
             firstElement.focus();
           }
@@ -67,8 +76,13 @@ export const Modal: React.FC<ModalProps> = ({
     // Initial focus on first interactive element or dialog container
     setTimeout(() => {
       if (modalRef.current) {
-        const firstFocusable = modalRef.current.querySelector<HTMLElement>(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        const rawElements = Array.from(
+          modalRef.current.querySelectorAll<HTMLElement>(
+            'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          )
+        );
+        const firstFocusable = rawElements.find(
+          (el) => !el.hasAttribute('disabled') && (el.offsetWidth > 0 || el.offsetHeight > 0 || el.getClientRects().length > 0)
         );
         if (firstFocusable) {
           firstFocusable.focus();

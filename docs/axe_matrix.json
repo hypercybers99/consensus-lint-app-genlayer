@@ -1,6 +1,6 @@
 {
-  "scannedAt": "2026-11-10T02:58:50.459Z",
-  "totalScans": 48,
+  "scannedAt": "2026-11-10T08:29:57.077Z",
+  "totalScans": 60,
   "zeroViolations": true,
   "entries": [
     {
@@ -52,6 +52,54 @@
       "violations": []
     },
     {
+      "route": "/board",
+      "name": "Leaderboard",
+      "viewport": "desktop-1440",
+      "theme": "dark",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/board",
+      "name": "Leaderboard",
+      "viewport": "desktop-1440",
+      "theme": "light",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/board",
+      "name": "Leaderboard",
+      "viewport": "tablet-500",
+      "theme": "dark",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/board",
+      "name": "Leaderboard",
+      "viewport": "tablet-500",
+      "theme": "light",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/board",
+      "name": "Leaderboard",
+      "viewport": "mobile-390",
+      "theme": "dark",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/board",
+      "name": "Leaderboard",
+      "viewport": "mobile-390",
+      "theme": "light",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
       "route": "/register",
       "name": "Register",
       "viewport": "desktop-1440",
@@ -100,48 +148,48 @@
       "violations": []
     },
     {
-      "route": "/board",
-      "name": "Leaderboard",
+      "route": "/t/c74c8288839d",
+      "name": "TargetDetail",
       "viewport": "desktop-1440",
       "theme": "dark",
       "violationsCount": 0,
       "violations": []
     },
     {
-      "route": "/board",
-      "name": "Leaderboard",
+      "route": "/t/c74c8288839d",
+      "name": "TargetDetail",
       "viewport": "desktop-1440",
       "theme": "light",
       "violationsCount": 0,
       "violations": []
     },
     {
-      "route": "/board",
-      "name": "Leaderboard",
+      "route": "/t/c74c8288839d",
+      "name": "TargetDetail",
       "viewport": "tablet-500",
       "theme": "dark",
       "violationsCount": 0,
       "violations": []
     },
     {
-      "route": "/board",
-      "name": "Leaderboard",
+      "route": "/t/c74c8288839d",
+      "name": "TargetDetail",
       "viewport": "tablet-500",
       "theme": "light",
       "violationsCount": 0,
       "violations": []
     },
     {
-      "route": "/board",
-      "name": "Leaderboard",
+      "route": "/t/c74c8288839d",
+      "name": "TargetDetail",
       "viewport": "mobile-390",
       "theme": "dark",
       "violationsCount": 0,
       "violations": []
     },
     {
-      "route": "/board",
-      "name": "Leaderboard",
+      "route": "/t/c74c8288839d",
+      "name": "TargetDetail",
       "viewport": "mobile-390",
       "theme": "light",
       "violationsCount": 0,
@@ -196,54 +244,6 @@
       "violations": []
     },
     {
-      "route": "/evidence",
-      "name": "Evidence",
-      "viewport": "desktop-1440",
-      "theme": "dark",
-      "violationsCount": 0,
-      "violations": []
-    },
-    {
-      "route": "/evidence",
-      "name": "Evidence",
-      "viewport": "desktop-1440",
-      "theme": "light",
-      "violationsCount": 0,
-      "violations": []
-    },
-    {
-      "route": "/evidence",
-      "name": "Evidence",
-      "viewport": "tablet-500",
-      "theme": "dark",
-      "violationsCount": 0,
-      "violations": []
-    },
-    {
-      "route": "/evidence",
-      "name": "Evidence",
-      "viewport": "tablet-500",
-      "theme": "light",
-      "violationsCount": 0,
-      "violations": []
-    },
-    {
-      "route": "/evidence",
-      "name": "Evidence",
-      "viewport": "mobile-390",
-      "theme": "dark",
-      "violationsCount": 0,
-      "violations": []
-    },
-    {
-      "route": "/evidence",
-      "name": "Evidence",
-      "viewport": "mobile-390",
-      "theme": "light",
-      "violationsCount": 0,
-      "violations": []
-    },
-    {
       "route": "/badges",
       "name": "Badges",
       "viewport": "desktop-1440",
@@ -286,6 +286,102 @@
     {
       "route": "/badges",
       "name": "Badges",
+      "viewport": "mobile-390",
+      "theme": "light",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/method",
+      "name": "Methodology",
+      "viewport": "desktop-1440",
+      "theme": "dark",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/method",
+      "name": "Methodology",
+      "viewport": "desktop-1440",
+      "theme": "light",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/method",
+      "name": "Methodology",
+      "viewport": "tablet-500",
+      "theme": "dark",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/method",
+      "name": "Methodology",
+      "viewport": "tablet-500",
+      "theme": "light",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/method",
+      "name": "Methodology",
+      "viewport": "mobile-390",
+      "theme": "dark",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/method",
+      "name": "Methodology",
+      "viewport": "mobile-390",
+      "theme": "light",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/evidence",
+      "name": "Evidence",
+      "viewport": "desktop-1440",
+      "theme": "dark",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/evidence",
+      "name": "Evidence",
+      "viewport": "desktop-1440",
+      "theme": "light",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/evidence",
+      "name": "Evidence",
+      "viewport": "tablet-500",
+      "theme": "dark",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/evidence",
+      "name": "Evidence",
+      "viewport": "tablet-500",
+      "theme": "light",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/evidence",
+      "name": "Evidence",
+      "viewport": "mobile-390",
+      "theme": "dark",
+      "violationsCount": 0,
+      "violations": []
+    },
+    {
+      "route": "/evidence",
+      "name": "Evidence",
       "viewport": "mobile-390",
       "theme": "light",
       "violationsCount": 0,
@@ -340,48 +436,48 @@
       "violations": []
     },
     {
-      "route": "/t/c74c8288839d",
-      "name": "TargetDetail",
+      "route": "/register (dialog-open)",
+      "name": "TransactionModal Open",
       "viewport": "desktop-1440",
       "theme": "dark",
       "violationsCount": 0,
       "violations": []
     },
     {
-      "route": "/t/c74c8288839d",
-      "name": "TargetDetail",
+      "route": "/register (dialog-open)",
+      "name": "TransactionModal Open",
       "viewport": "desktop-1440",
       "theme": "light",
       "violationsCount": 0,
       "violations": []
     },
     {
-      "route": "/t/c74c8288839d",
-      "name": "TargetDetail",
+      "route": "/register (dialog-open)",
+      "name": "TransactionModal Open",
       "viewport": "tablet-500",
       "theme": "dark",
       "violationsCount": 0,
       "violations": []
     },
     {
-      "route": "/t/c74c8288839d",
-      "name": "TargetDetail",
+      "route": "/register (dialog-open)",
+      "name": "TransactionModal Open",
       "viewport": "tablet-500",
       "theme": "light",
       "violationsCount": 0,
       "violations": []
     },
     {
-      "route": "/t/c74c8288839d",
-      "name": "TargetDetail",
+      "route": "/register (dialog-open)",
+      "name": "TransactionModal Open",
       "viewport": "mobile-390",
       "theme": "dark",
       "violationsCount": 0,
       "violations": []
     },
     {
-      "route": "/t/c74c8288839d",
-      "name": "TargetDetail",
+      "route": "/register (dialog-open)",
+      "name": "TransactionModal Open",
       "viewport": "mobile-390",
       "theme": "light",
       "violationsCount": 0,

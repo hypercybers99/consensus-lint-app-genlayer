@@ -131,11 +131,11 @@ Verified across three non-overlapping viewport sizes:
 ---
 
 ### 5. Axe-Core Accessibility Matrix
-Automated accessibility scan executed across all 8 application routes, 3 viewports (`1440x900`, `500x800`, `390x844`), and light/dark modes (total 48 individual page audits):
+Automated accessibility scan executed across all 9 application routes plus open modal dialog, 3 viewports (`1440x900`, `500x800`, `390x844`), and light/dark modes (total 60 individual page & state audits):
 
-- **Total Audits:** 48
+- **Total Audits:** 60
 - **Zero Violations Verified:** true
-- **Routes Audited:** `/`, `/register`, `/board`, `/rules`, `/evidence`, `/badges`, `/wallet`, `/t/c74c8288839d`
+- **Routes Audited:** `/`, `/register`, `/board`, `/rules`, `/evidence`, `/badges`, `/wallet`, `/method`, `/t/c74c8288839d`, plus `/register (dialog-open)`
 - **Results Stored:** `docs/axe_matrix.json`
 
 ---
@@ -246,8 +246,8 @@ All reference contracts verified byte-for-byte identical to pinned sources.
 - **Contract Repository:** https://github.com/hypercybers99/consensus-lint-genlayer
 - **Contract Release Tag:** `v1.0.1` (pinned on audited commit `8b547e3a3257e5d24bf74463a5271c39d6bcb375`)
 - **Release Artifacts Archive:** `consensus-lint-app-artifacts.zip`
-  - **Archive Size:** 2,692,017 bytes
-  - **Archive SHA-256:** `bace4e0c00d8b7d7334dc0c7766a01d4f8532760cb3c16d3c10ef602cddd8ba0`
+  - **Archive Size:** 3,823,068 bytes
+  - **Archive SHA-256:** `cf1e7fff38dce0afa647ed940191b7138f656e6a85104eb576453e5a5f0cf5b0`
 
 ---
 

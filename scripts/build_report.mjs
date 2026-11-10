@@ -154,11 +154,11 @@ Verified across three non-overlapping viewport sizes:
 ---
 
 ### 5. Axe-Core Accessibility Matrix
-Automated accessibility scan executed across all 8 application routes, 3 viewports (\`1440x900\`, \`500x800\`, \`390x844\`), and light/dark modes (total 48 individual page audits):
+Automated accessibility scan executed across all 9 application routes plus open modal dialog, 3 viewports (\`1440x900\`, \`500x800\`, \`390x844\`), and light/dark modes (total 60 individual page & state audits):
 
 - **Total Audits:** ${axeMatrix.totalScans}
 - **Zero Violations Verified:** ${axeMatrix.zeroViolations ? 'true' : 'false'}
-- **Routes Audited:** \`/\`, \`/register\`, \`/board\`, \`/rules\`, \`/evidence\`, \`/badges\`, \`/wallet\`, \`/t/c74c8288839d\`
+- **Routes Audited:** \`/\`, \`/register\`, \`/board\`, \`/rules\`, \`/evidence\`, \`/badges\`, \`/wallet\`, \`/method\`, \`/t/c74c8288839d\`, plus \`/register (dialog-open)\`
 - **Results Stored:** \`docs/axe_matrix.json\`
 
 ---
