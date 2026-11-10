@@ -14,19 +14,28 @@ async function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-async function fetchTx(hash) {
-  const res = await fetch(RPC_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      jsonrpc: '2.0',
-      id: 1,
-      method: 'eth_getTransactionByHash',
-      params: [hash],
-    }),
-  });
-  const json = await res.json();
-  return json?.result;
+async function fetchTx(hash, retries = 3) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(RPC_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          id: 1,
+          method: 'eth_getTransactionByHash',
+          params: [hash],
+        }),
+      });
+      const json = await res.json();
+      if (json?.result) return json.result;
+      if (attempt < retries) await sleep(1000);
+    } catch (e) {
+      if (attempt === retries) throw e;
+      await sleep(1000);
+    }
+  }
+  return null;
 }
 
 function calculateAgreement(tx) {
@@ -67,14 +76,19 @@ async function main() {
       if (t.auditTxHash) hashesToVerify.push({ hash: t.auditTxHash, context: `Audit (${t.label})` });
     }
     for (const [k, s] of Object.entries(live.self_lint || {})) {
-      if (s.register_tx_hash) hashesToVerify.push({ hash: s.register_tx_hash, context: `Self-Lint Reg (${s.label})` });
-      if (s.audit_tx_hash) hashesToVerify.push({ hash: s.audit_tx_hash, context: `Self-Lint Audit (${s.label})` });
+      const regHash = s.registrationTxHash || s.register_tx_hash;
+      const audHash = s.auditTxHash || s.audit_tx_hash;
+      if (regHash) hashesToVerify.push({ hash: regHash, context: `Self-Lint Reg (${s.label || k})` });
+      if (audHash) hashesToVerify.push({ hash: audHash, context: `Self-Lint Audit (${s.label || k})` });
     }
     for (const [k, b] of Object.entries(live.badges || {})) {
-      if (b.claimTxHash) hashesToVerify.push({ hash: b.claimTxHash, context: `Badge Claim (${b.label || k})` });
+      if (b.claimTxHash) hashesToVerify.push({ hash: b.claimTxHash, context: `Badge Claim (${b.record?.display_name || k})` });
     }
     for (const r of live.maintainer_responses || []) {
       if (r.txHash) hashesToVerify.push({ hash: r.txHash, context: `Maintainer Response (${r.tid})` });
+    }
+    for (const n of live.negative_tests || []) {
+      if (n.txHash) hashesToVerify.push({ hash: n.txHash, context: `Negative Test (${n.id || n.description})` });
     }
   }
 

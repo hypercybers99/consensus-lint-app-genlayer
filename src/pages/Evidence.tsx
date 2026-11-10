@@ -67,7 +67,12 @@ export const Evidence: React.FC = () => {
       </div>
 
       {/* Evidence Table */}
-      <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40">
+      <div
+        tabIndex={0}
+        role="region"
+        aria-label="Evidence transactions table"
+        className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40 focus:outline-none focus:ring-1 focus:ring-cyan-500"
+      >
         <table className="w-full text-left text-sm text-slate-300">
           <thead className="bg-slate-950/80 text-xs uppercase text-slate-400 border-b border-slate-800">
             <tr>
@@ -75,6 +80,7 @@ export const Evidence: React.FC = () => {
               <th scope="col" className="px-4 py-3">Target Label</th>
               <th scope="col" className="px-4 py-3">Target ID</th>
               <th scope="col" className="px-4 py-3">Tx Hash (Full 66 Chars)</th>
+              <th scope="col" className="px-4 py-3">Raw Receipt Status</th>
               <th scope="col" className="px-4 py-3">Agreement</th>
               <th scope="col" className="px-4 py-3">Consensus Outcome</th>
             </tr>
@@ -107,6 +113,11 @@ export const Evidence: React.FC = () => {
                   >
                     {row.txHash}
                   </a>
+                </td>
+                <td className="px-4 py-3 font-mono text-slate-400">
+                  <span className="px-2 py-0.5 rounded text-[11px] bg-slate-800 border border-slate-700 text-slate-300">
+                    {row.rawStatus || 'FINALIZED'}
+                  </span>
                 </td>
                 <td className="px-4 py-3 text-emerald-400 font-bold whitespace-nowrap">
                   {row.agreement} agreed

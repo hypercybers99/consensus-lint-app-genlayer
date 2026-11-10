@@ -80,7 +80,10 @@ export const Wallet: React.FC = () => {
             <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider block">
               Connected Account
             </span>
-            <div className="text-base font-bold font-mono text-white mt-1 break-all">
+            <div
+              data-testid="current-wallet-address"
+              className="text-base font-bold font-mono text-white mt-1 break-all"
+            >
               {address || 'No Account Loaded'}
             </div>
             {address && (

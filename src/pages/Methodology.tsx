@@ -38,7 +38,12 @@ export const Methodology: React.FC = () => {
         </div>
 
         {/* Grade Bands Table */}
-        <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40 mt-4">
+        <div
+          tabIndex={0}
+          role="region"
+          aria-label="Grade bands explanation table"
+          className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40 mt-4 focus:outline-none focus:ring-1 focus:ring-cyan-500"
+        >
           <table className="w-full text-left text-xs">
             <thead className="bg-slate-950 text-slate-400 uppercase border-b border-slate-800">
               <tr>

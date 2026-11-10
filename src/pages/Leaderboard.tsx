@@ -10,23 +10,24 @@ export const Leaderboard: React.FC = () => {
   const [boardData, setBoardData] = useState<any>(null);
   const [activeTab, setActiveTab] = useState<'best' | 'partial' | 'most_improved'>('best');
   const [loading, setLoading] = useState(true);
+  const [rpcError, setRpcError] = useState<string | null>(null);
+
+  const fetchBoard = async () => {
+    setLoading(true);
+    setRpcError(null);
+    try {
+      const res = await getBoard(50);
+      setBoardData(res);
+    } catch (e: any) {
+      console.error('Failed to fetch leaderboard:', e);
+      setRpcError(e?.message || 'RPC communication error');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    let mounted = true;
-    async function fetchBoard() {
-      try {
-        const res = await getBoard(50);
-        if (mounted) setBoardData(res);
-      } catch (e) {
-        console.error('Failed to fetch leaderboard:', e);
-      } finally {
-        if (mounted) setLoading(false);
-      }
-    }
     fetchBoard();
-    return () => {
-      mounted = false;
-    };
   }, []);
 
   const items = boardData?.[activeTab] || [];
@@ -107,7 +108,12 @@ export const Leaderboard: React.FC = () => {
       )}
 
       {/* Table */}
-      <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40">
+      <div
+        tabIndex={0}
+        role="region"
+        aria-label="Hygiene leaderboard table"
+        className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40 focus:outline-none focus:ring-1 focus:ring-cyan-500"
+      >
         <table className="w-full text-left text-sm text-slate-300">
           <thead className="bg-slate-950/80 text-xs uppercase text-slate-400 border-b border-slate-800">
             <tr>
@@ -125,6 +131,21 @@ export const Leaderboard: React.FC = () => {
               <tr>
                 <td colSpan={7} className="text-center py-8 text-slate-500 font-sans">
                   Loading leaderboard from GenLayer Studionet (Preview)...
+                </td>
+              </tr>
+            ) : rpcError ? (
+              <tr>
+                <td colSpan={7} className="text-center py-8 font-sans">
+                  <div className="text-rose-400 font-medium mb-2">
+                    Failed to communicate with GenLayer Studionet (Preview) RPC endpoint.
+                  </div>
+                  <button
+                    type="button"
+                    onClick={fetchBoard}
+                    className="px-4 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold transition"
+                  >
+                    Retry
+                  </button>
                 </td>
               </tr>
             ) : items.length === 0 ? (

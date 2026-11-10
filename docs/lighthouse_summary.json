@@ -1,0 +1,163 @@
+{
+  "auditedAt": "2026-11-10T03:03:41.601Z",
+  "targetUrl": "https://consensus-lint-app-genlayer.vercel.app",
+  "totalAudits": 12,
+  "results": [
+    {
+      "route": "/",
+      "name": "home",
+      "device": "mobile",
+      "scores": {
+        "performance": 99,
+        "accessibility": 96,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 819.19408,
+      "lcpMs": 819.19408
+    },
+    {
+      "route": "/",
+      "name": "home",
+      "device": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 96,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 263.73332000000005,
+      "lcpMs": 263.73332000000005
+    },
+    {
+      "route": "/board",
+      "name": "board",
+      "device": "mobile",
+      "scores": {
+        "performance": 74,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 858.9491899999999,
+      "lcpMs": 858.9491899999999
+    },
+    {
+      "route": "/board",
+      "name": "board",
+      "device": "desktop",
+      "scores": {
+        "performance": 83,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 293.71443,
+      "lcpMs": 293.71443
+    },
+    {
+      "route": "/register",
+      "name": "register",
+      "device": "mobile",
+      "scores": {
+        "performance": 82,
+        "accessibility": 95,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 842.9804399999999,
+      "lcpMs": 842.9804399999999
+    },
+    {
+      "route": "/register",
+      "name": "register",
+      "device": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 95,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 277.7342100000001,
+      "lcpMs": 277.7342100000001
+    },
+    {
+      "route": "/rules",
+      "name": "rules",
+      "device": "mobile",
+      "scores": {
+        "performance": 80,
+        "accessibility": 95,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 830.59972,
+      "lcpMs": 830.59972
+    },
+    {
+      "route": "/rules",
+      "name": "rules",
+      "device": "desktop",
+      "scores": {
+        "performance": 75,
+        "accessibility": 95,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 272.80035999999996,
+      "lcpMs": 272.80035999999996
+    },
+    {
+      "route": "/evidence",
+      "name": "evidence",
+      "device": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 96,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 819.6507399999998,
+      "lcpMs": 819.6507399999998
+    },
+    {
+      "route": "/evidence",
+      "name": "evidence",
+      "device": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 96,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 264.19008,
+      "lcpMs": 264.19008
+    },
+    {
+      "route": "/badges",
+      "name": "badges",
+      "device": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 95,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 860.334,
+      "lcpMs": 860.334
+    },
+    {
+      "route": "/badges",
+      "name": "badges",
+      "device": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 95,
+        "bestPractices": 100,
+        "seo": 92
+      },
+      "fcpMs": 257.21187,
+      "lcpMs": 257.21187
+    }
+  ]
+}

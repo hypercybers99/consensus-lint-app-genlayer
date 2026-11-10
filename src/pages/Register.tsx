@@ -8,27 +8,28 @@ import { writeRegisterTarget, waitReceiptWithRetry, getTarget, listTargetIds } f
 import { TransactionModal } from '../components/TransactionModal';
 import { TxStatusState } from '../types';
 import { parseRevertMessage } from '../services/revertMap';
+import { parseAndValidateSourceUrl } from '../services/urlPolicy';
 
 const PRESETS = [
   {
     name: 'GoodContract Fixture',
     label: 'GoodContract Fixture',
     series: 'Unit Fixtures',
-    url: 'https://raw.githubusercontent.com/hypercybers99/consensus-lint-fixtures/7bd436ef6ed18a787d88bc67217f0de63b7e85a8/GoodContract.py',
+    url: 'https://raw.githubusercontent.com/hypercybers99/consensus-lint-fixtures/7bd436ef6ed18a787d88bc67217f0de63b7e85a8/good_contract.py',
     description: 'Clean contract adhering to consensus hygiene standards (Score 100/A)',
   },
   {
     name: 'BadContract Fixture',
     label: 'BadContract Fixture',
     series: 'Unit Fixtures',
-    url: 'https://raw.githubusercontent.com/hypercybers99/consensus-lint-fixtures/7bd436ef6ed18a787d88bc67217f0de63b7e85a8/BadContract.py',
+    url: 'https://raw.githubusercontent.com/hypercybers99/consensus-lint-fixtures/7bd436ef6ed18a787d88bc67217f0de63b7e85a8/bad_contract.py',
     description: 'Contract with 11 intentional consensus hygiene violations',
   },
   {
     name: 'MixedContract Fixture',
     label: 'MixedContract Fixture',
     series: 'Unit Fixtures',
-    url: 'https://raw.githubusercontent.com/hypercybers99/consensus-lint-fixtures/7bd436ef6ed18a787d88bc67217f0de63b7e85a8/MixedContract.py',
+    url: 'https://raw.githubusercontent.com/hypercybers99/consensus-lint-fixtures/7bd436ef6ed18a787d88bc67217f0de63b7e85a8/mixed_contract.py',
     description: 'Realistic contract with minor warnings',
   },
 ];
@@ -68,40 +69,11 @@ export const Register: React.FC = () => {
       return false;
     }
 
-    const cleanUrl = sourceUrl.trim();
-    if (cleanUrl.length > 512) {
-      setValidationError('Source URL exceeds 512 characters.');
-      return false;
-    }
-
     try {
-      const parsed = new URL(cleanUrl);
-      if (parsed.protocol !== 'https:') {
-        setValidationError('Source URL must use https:// protocol scheme.');
-        return false;
-      }
-      if (parsed.hostname !== 'raw.githubusercontent.com') {
-        setValidationError('Source host must be raw.githubusercontent.com.');
-        return false;
-      }
-      if (!parsed.pathname.endsWith('.py')) {
-        setValidationError('Source URL path must end with .py.');
-        return false;
-      }
-      if (parsed.search || parsed.hash) {
-        setValidationError('Source URL must not contain query parameters (?) or fragments (#).');
-        return false;
-      }
-      if (parsed.username || parsed.password) {
-        setValidationError('Source URL must not contain credentials.');
-        return false;
-      }
-      if (parsed.port) {
-        setValidationError('Custom ports are not allowed in source URLs.');
-        return false;
-      }
-    } catch (e) {
-      setValidationError('Source URL is not a valid URL.');
+      parseAndValidateSourceUrl(sourceUrl);
+    } catch (e: any) {
+      const parsed = parseRevertMessage(e.message);
+      setValidationError(parsed.explanation || e.message);
       return false;
     }
 

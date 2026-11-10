@@ -1,64 +1,69 @@
 {
   "network": "GenLayer Studionet (Preview)",
   "chainId": 61999,
-  "date": "2026-11-09T13:37:39.359Z",
+  "date": "2026-11-10T02:51:21.605Z",
   "accounts": {
     "account1": {
-      "address": "0xd0F85657aA701032430A7D0d4Eb9CFa70795D3EE",
+      "address": "0x1E780964d200d23c1873AadaA31abB0CB864eeF1",
       "initialBalanceWei": "0"
     },
     "account2": {
-      "address": "0x6dED88089F79F6ed49f7F7D974b4Ae493d62Bcdd",
+      "address": "0xAe78434f7fd9035AEE5AF9119367AC0EDC523795",
       "initialBalanceWei": "0"
     }
   },
   "transactions": [
     {
       "action": "register_target",
-      "sender": "0xd0F85657aA701032430A7D0d4Eb9CFa70795D3EE",
-      "targetId": "01c61272b3eb",
-      "txHash": "0xf7d60e8d5d35bd963a1ebba95fad8ab2a8c99fd92b4d7b349554016699e3e445",
-      "rawStatus": "ACCEPTED",
-      "agreement": "3/5",
-      "elapsedSeconds": 5.84,
-      "outcome": "Accepted by validators (3/5 agreed) - state applied",
-      "userError": null
+      "sender": "0x1E780964d200d23c1873AadaA31abB0CB864eeF1",
+      "targetId": "f27c2024f254",
+      "txHash": "0x796879ce8dcddeca3993dc0f1d82fdc6f26bf666793916305c26b28aba4f9e8c",
+      "rawStatus": "FINALIZED",
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
     },
     {
       "action": "audit_target",
-      "sender": "0xd0F85657aA701032430A7D0d4Eb9CFa70795D3EE",
-      "targetId": "01c61272b3eb",
-      "txHash": "0x1d74f971626e5af43a8200239b2475e2782e7fcf1c44dca4ad82588bf08513fa",
-      "rawStatus": "ACCEPTED",
-      "agreement": "3/5",
-      "elapsedSeconds": 15.27,
-      "outcome": "Accepted by validators (3/5 agreed) - state applied",
-      "auditScore": 94,
-      "auditGrade": "A",
-      "truncated": false
+      "sender": "0x1E780964d200d23c1873AadaA31abB0CB864eeF1",
+      "targetId": "f27c2024f254",
+      "txHash": "0x7788393fb632bd217b64e239eab6d02c8db62499496a1ff14cc079b506f78b6a",
+      "rawStatus": "FINALIZED",
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
     },
     {
       "action": "respond_to_finding",
-      "sender": "0xd0F85657aA701032430A7D0d4Eb9CFa70795D3EE",
-      "targetId": "01c61272b3eb",
-      "ruleId": "CL06",
-      "txHash": "0x6af85be74e3f741f510e6b03298a9618b98feca7aca2ea60112eb0722dfb3724",
-      "rawStatus": "ACCEPTED",
-      "agreement": "5/5",
-      "elapsedSeconds": 5.34,
+      "sender": "0x1E780964d200d23c1873AadaA31abB0CB864eeF1",
+      "targetId": "f27c2024f254",
+      "txHash": "0x8d99d94667bc303ef5c97abe1d75272bde5db76c8cbc1ccae85a5f43f6bd3241",
+      "rawStatus": "FINALIZED",
+      "outcome": "Accepted by validators (5/5 agreed) - state applied"
+    },
+    {
+      "action": "claim_badge",
+      "sender": "0x1E780964d200d23c1873AadaA31abB0CB864eeF1",
+      "targetId": "f27c2024f254",
+      "txHash": "0x9044dfc82c03a43985682b7681ae4b41af6c6a72bbf6a3464bc65df4679c05ae",
+      "rawStatus": "FINALIZED",
       "outcome": "Accepted by validators (5/5 agreed) - state applied"
     },
     {
       "action": "unauthorized_respond_to_finding_revert",
-      "sender": "0x6dED88089F79F6ed49f7F7D974b4Ae493d62Bcdd",
-      "targetId": "01c61272b3eb",
-      "txHash": "0x43b9cd0e9b3d4e4e93c3ad5da77a4e797745abedfbf92b8fa11ba840da609009",
-      "rawStatus": "ACCEPTED",
-      "agreement": "3/5",
-      "elapsedSeconds": 8.8,
+      "sender": "0xAe78434f7fd9035AEE5AF9119367AC0EDC523795",
+      "targetId": "f27c2024f254",
+      "txHash": "0xa5b31834343d90e1e787bd4f9331f2aab0ebf0b0c517948529387773e8aee945",
+      "rawStatus": "FINALIZED",
       "outcome": "Reverted - state not applied (3/5 agreed on the revert)",
       "expectedRevert": "only the registrant can do this",
       "actualRevert": "only the registrant can do this"
+    },
+    {
+      "action": "truncated_badge_claim_revert",
+      "sender": "0xAe78434f7fd9035AEE5AF9119367AC0EDC523795",
+      "targetId": "dca608d38708",
+      "txHash": "0x3c1b5998a0b44a6ab81ce770dd9f6ac33706606ed087d8cbda3f25f9f10ddec4",
+      "rawStatus": "FINALIZED",
+      "outcome": "Reverted - state not applied (4/5 agreed on the revert)",
+      "expectedRevert": "cannot claim badge for truncated audit",
+      "actualRevert": "cannot claim badge for truncated audit"
     }
   ]
 }

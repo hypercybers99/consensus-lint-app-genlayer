@@ -25,7 +25,7 @@ export const TransactionModal: React.FC<TransactionModalProps> = ({
   return (
     <Modal
       isOpen={isOpen}
-      onClose={isPending ? () => {} : onClose}
+      onClose={onClose}
       title={actionTitle}
       description="Transaction lifecycle on GenLayer Studionet (Preview)"
     >
@@ -98,13 +98,17 @@ export const TransactionModal: React.FC<TransactionModalProps> = ({
           {state.txHash && (
             <div className="text-xs font-mono space-y-1 pt-2 border-t border-slate-800">
               <span className="text-slate-400">Transaction Hash (Full 66 chars):</span>
-              <div className="break-all text-cyan-400 bg-slate-900 p-2 rounded border border-slate-800">
+              <div
+                data-testid="tx-hash-display"
+                className="break-all text-cyan-400 bg-slate-900 p-2 rounded border border-slate-800"
+              >
                 {state.txHash}
               </div>
               <a
                 href={`${NETWORK_CONFIG.explorerUrl}/tx/${state.txHash}`}
                 target="_blank"
                 rel="noreferrer"
+                data-testid="tx-hash-link"
                 className="inline-block text-xs text-cyan-400 hover:underline pt-1"
               >
                 View on GenLayer Studionet Explorer &rarr;
@@ -121,6 +125,7 @@ export const TransactionModal: React.FC<TransactionModalProps> = ({
 
           {state.executionOutcome && (
             <div
+              data-testid="execution-outcome"
               className={`text-xs p-3 rounded border font-medium ${
                 state.step === 'completed'
                   ? 'border-emerald-800 bg-emerald-950/30 text-emerald-300'
@@ -133,9 +138,17 @@ export const TransactionModal: React.FC<TransactionModalProps> = ({
           )}
 
           {state.errorTitle && (
-            <div className="text-xs p-3 rounded border border-rose-800 bg-rose-950/30 text-rose-200 space-y-1">
+            <div
+              data-testid="error-message"
+              className="text-xs p-3 rounded border border-rose-800 bg-rose-950/30 text-rose-200 space-y-1"
+            >
               <div className="font-bold text-rose-300">{state.errorTitle}</div>
               <div className="text-slate-300">{state.errorDetails || state.errorMessage}</div>
+              {state.errorMessage && (
+                <div data-testid="raw-user-error" className="text-[11px] font-mono text-rose-400">
+                  Contract UserError: &quot;{state.errorMessage}&quot;
+                </div>
+              )}
             </div>
           )}
 

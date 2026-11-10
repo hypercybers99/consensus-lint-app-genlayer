@@ -18,6 +18,58 @@ import { TxStatusState } from '../types';
 import { parseRevertMessage } from '../services/revertMap';
 import { NETWORK_CONFIG, CONTRACT_CONSTANTS } from '../config/contracts';
 
+export interface TargetStatusDisplayProps {
+  rpcError: string | null;
+  targetNotFound: boolean;
+  id?: string;
+  onRetry?: () => void;
+}
+
+export const TargetStatusDisplay: React.FC<TargetStatusDisplayProps> = ({
+  rpcError,
+  targetNotFound,
+  id,
+  onRetry,
+}) => {
+  if (rpcError) {
+    return (
+      <div
+        data-testid="rpc-error-state"
+        className="max-w-2xl mx-auto text-center py-16 space-y-4 rounded-xl border border-rose-900/60 bg-rose-950/20 p-8"
+      >
+        <h1 className="text-2xl font-bold text-rose-200">RPC Communication Error</h1>
+        <p className="text-sm text-slate-300">
+          Failed to communicate with GenLayer Studionet (Preview) RPC endpoint ({NETWORK_CONFIG.rpcUrl}).
+        </p>
+        <p className="text-xs font-mono text-rose-400 break-all">{rpcError}</p>
+        <div className="pt-2">
+          <button
+            type="button"
+            onClick={onRetry}
+            className="px-5 py-2.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-xs transition"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (targetNotFound) {
+    return (
+      <div className="max-w-2xl mx-auto text-center py-16 space-y-4">
+        <h1 className="text-2xl font-bold text-slate-100">Target Not Found</h1>
+        <p className="text-sm text-slate-400">Target ID &quot;{id}&quot; does not exist on the ConsensusLint registry.</p>
+        <Link to="/board" className="inline-block px-4 py-2 bg-slate-800 rounded text-cyan-400 text-sm">
+          Return to Leaderboard
+        </Link>
+      </div>
+    );
+  }
+
+  return null;
+};
+
 export const TargetDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { account, address } = useWallet();
@@ -26,6 +78,7 @@ export const TargetDetail: React.FC = () => {
   const [selectedAuditN, setSelectedAuditN] = useState<number>(1);
   const [currentAudit, setCurrentAudit] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [rpcError, setRpcError] = useState<string | null>(null);
 
   // Maintainer response form state
   const [responseRuleId, setResponseRuleId] = useState('');
@@ -49,6 +102,7 @@ export const TargetDetail: React.FC = () => {
   const loadTargetAndAudit = useCallback(async (auditNToLoad?: number) => {
     if (!id) return;
     setLoading(true);
+    setRpcError(null);
     try {
       const t = await getTarget(id);
       setTarget(t);
@@ -58,8 +112,9 @@ export const TargetDetail: React.FC = () => {
         const a = await getAudit(id, targetN);
         setCurrentAudit(a);
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error('Failed to load target detail:', e);
+      setRpcError(e?.message || 'RPC communication error');
     } finally {
       setLoading(false);
     }
@@ -244,15 +299,23 @@ export const TargetDetail: React.FC = () => {
     );
   }
 
+  if (rpcError) {
+    return (
+      <TargetStatusDisplay
+        rpcError={rpcError}
+        targetNotFound={false}
+        onRetry={() => loadTargetAndAudit(selectedAuditN)}
+      />
+    );
+  }
+
   if (!target) {
     return (
-      <div className="max-w-2xl mx-auto text-center py-16 space-y-4">
-        <h1 className="text-2xl font-bold text-slate-100">Target Not Found</h1>
-        <p className="text-sm text-slate-400">Target ID &quot;{id}&quot; does not exist on the ConsensusLint registry.</p>
-        <Link to="/board" className="inline-block px-4 py-2 bg-slate-800 rounded text-cyan-400 text-sm">
-          Return to Leaderboard
-        </Link>
-      </div>
+      <TargetStatusDisplay
+        rpcError={null}
+        targetNotFound={true}
+        id={id}
+      />
     );
   }
 
@@ -401,7 +464,7 @@ export const TargetDetail: React.FC = () => {
                 No hygiene violations detected. Perfect 100/A consensus evaluation.
               </div>
             ) : (
-              <div className="space-y-4">
+              <div data-testid="findings-list" className="space-y-4">
                 {findingKeys.map((ruleId) => {
                   const finding = currentAudit.findings[ruleId];
                   const responsesForRule = (currentAudit.responses || []).filter(
@@ -447,7 +510,12 @@ export const TargetDetail: React.FC = () => {
                               className="p-3 rounded border border-slate-850 bg-slate-900 font-mono text-xs text-slate-300 space-y-1"
                             >
                               <div className="text-[11px] text-cyan-400">Line {item.line}:</div>
-                              <pre className="overflow-x-auto text-[11px] text-slate-200">
+                              <pre
+                                tabIndex={0}
+                                role="region"
+                                aria-label={`Code snippet line ${item.line}`}
+                                className="overflow-x-auto text-[11px] text-slate-200 focus:outline-none focus:ring-1 focus:ring-cyan-500 rounded"
+                              >
                                 <code>{item.snippet}</code>
                               </pre>
                             </div>

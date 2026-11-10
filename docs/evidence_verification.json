@@ -1,9 +1,9 @@
 {
-  "verifiedAt": "2026-11-09T13:38:54.071Z",
+  "verifiedAt": "2026-11-10T02:51:54.089Z",
   "network": "GenLayer Studionet (Preview)",
   "chainId": 61999,
-  "totalVerified": 16,
-  "totalAttempted": 16,
+  "totalVerified": 26,
+  "totalAttempted": 26,
   "records": [
     {
       "hash": "0xadebf1cc2d33a6c1220b3cf9f89fe7a331993fc8cab682b9a198378ab843fc9a",
@@ -106,8 +106,48 @@
       "outcome": "Accepted by validators (3/5 agreed) - state applied"
     },
     {
+      "hash": "0x722b5d235239fcf8dc21b82309292c9e920abb8f63784933be5feb897316ff56",
+      "context": "Self-Lint Reg (ConsensusLint Ledger Contract)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0x22cfe32c0ce4c7e621571e04a76943bea4eb6fe4b09ea0c89a65f9570a6c69a5",
+      "context": "Self-Lint Audit (ConsensusLint Ledger Contract)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0xa6f5a99d02a23cd2d9817eb0fd92cd0be694e76bc063af5fb70ec601a09ac916",
+      "context": "Self-Lint Reg (HygieneBadges Contract)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
+      "hash": "0x8a47d96342ec940756374087d38ab08fb6f9a118709a5e391566151d6b7b98ed",
+      "context": "Self-Lint Audit (HygieneBadges Contract)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (3/5 agreed) - state applied"
+    },
+    {
       "hash": "0x1bdffe953a4d33105c861a4137e8749b690ddaec76d056e95add61e88b86a565",
-      "context": "Badge Claim (good_contract)",
+      "context": "Badge Claim (GoodContract Clean Hygiene Badge)",
       "verified": true,
       "rawStatus": "FINALIZED",
       "agreement": "3/5",
@@ -126,7 +166,47 @@
       "outcome": "Accepted by validators (4/5 agreed) - state applied"
     },
     {
-      "hash": "0xf7d60e8d5d35bd963a1ebba95fad8ab2a8c99fd92b4d7b349554016699e3e445",
+      "hash": "0x3d4d7cf92c7dcf51dbdaac3709ba07a4f755feab6cac44d4487fb99c73ae1ffe",
+      "context": "Negative Test (Refuse badge issuance for truncated audit (ShellLike))",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "ERROR",
+      "userError": "cannot claim badge for truncated audit",
+      "outcome": "Reverted - state not applied (3/5 agreed on the revert)"
+    },
+    {
+      "hash": "0xc2deb05c4f5a873e44b4e746d1ce0f3be0e3797ea52011187f124fbf188ce540",
+      "context": "Negative Test (Reject finding response from non-registrant sender)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "ERROR",
+      "userError": "only the registrant can do this",
+      "outcome": "Reverted - state not applied (3/5 agreed on the revert)"
+    },
+    {
+      "hash": "0x0873cc1c919e86ff88543a84f09643ba336451d38409e8990659cd0e36a8e94c",
+      "context": "Negative Test (Reject finding response with invalid stance)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "ERROR",
+      "userError": "invalid stance",
+      "outcome": "Reverted - state not applied (3/5 agreed on the revert)"
+    },
+    {
+      "hash": "0xec32d000de0ac00d3e4f63ff7e5331e5b1b93591f20d4a9ccef3471bb32f691f",
+      "context": "Negative Test (Reject finding response for rule not present in audit)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "3/5",
+      "executionResult": "ERROR",
+      "userError": "finding not present in audit",
+      "outcome": "Reverted - state not applied (3/5 agreed on the revert)"
+    },
+    {
+      "hash": "0x796879ce8dcddeca3993dc0f1d82fdc6f26bf666793916305c26b28aba4f9e8c",
       "context": "E2E Live (register_target)",
       "verified": true,
       "rawStatus": "FINALIZED",
@@ -136,7 +216,7 @@
       "outcome": "Accepted by validators (3/5 agreed) - state applied"
     },
     {
-      "hash": "0x1d74f971626e5af43a8200239b2475e2782e7fcf1c44dca4ad82588bf08513fa",
+      "hash": "0x7788393fb632bd217b64e239eab6d02c8db62499496a1ff14cc079b506f78b6a",
       "context": "E2E Live (audit_target)",
       "verified": true,
       "rawStatus": "FINALIZED",
@@ -146,7 +226,7 @@
       "outcome": "Accepted by validators (3/5 agreed) - state applied"
     },
     {
-      "hash": "0x6af85be74e3f741f510e6b03298a9618b98feca7aca2ea60112eb0722dfb3724",
+      "hash": "0x8d99d94667bc303ef5c97abe1d75272bde5db76c8cbc1ccae85a5f43f6bd3241",
       "context": "E2E Live (respond_to_finding)",
       "verified": true,
       "rawStatus": "FINALIZED",
@@ -156,7 +236,17 @@
       "outcome": "Accepted by validators (5/5 agreed) - state applied"
     },
     {
-      "hash": "0x43b9cd0e9b3d4e4e93c3ad5da77a4e797745abedfbf92b8fa11ba840da609009",
+      "hash": "0x9044dfc82c03a43985682b7681ae4b41af6c6a72bbf6a3464bc65df4679c05ae",
+      "context": "E2E Live (claim_badge)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "5/5",
+      "executionResult": "SUCCESS",
+      "userError": null,
+      "outcome": "Accepted by validators (5/5 agreed) - state applied"
+    },
+    {
+      "hash": "0xa5b31834343d90e1e787bd4f9331f2aab0ebf0b0c517948529387773e8aee945",
       "context": "E2E Live (unauthorized_respond_to_finding_revert)",
       "verified": true,
       "rawStatus": "FINALIZED",
@@ -164,6 +254,16 @@
       "executionResult": "ERROR",
       "userError": "only the registrant can do this",
       "outcome": "Reverted - state not applied (3/5 agreed on the revert)"
+    },
+    {
+      "hash": "0x3c1b5998a0b44a6ab81ce770dd9f6ac33706606ed087d8cbda3f25f9f10ddec4",
+      "context": "E2E Live (truncated_badge_claim_revert)",
+      "verified": true,
+      "rawStatus": "FINALIZED",
+      "agreement": "4/5",
+      "executionResult": "ERROR",
+      "userError": "cannot claim badge for truncated audit",
+      "outcome": "Reverted - state not applied (4/5 agreed on the revert)"
     }
   ]
 }

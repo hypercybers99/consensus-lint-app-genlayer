@@ -9,6 +9,7 @@ export default defineConfig({
     port: 3000,
   },
   test: {
+    pool: 'forks',
     exclude: ['**/node_modules/**', '**/dist/**', '**/*.spec.ts', 'tests/e2e/**'],
   },
 })

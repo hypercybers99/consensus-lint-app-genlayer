@@ -166,7 +166,12 @@ export const Home: React.FC = () => {
             </Link>
           </div>
 
-          <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/50">
+          <div
+            tabIndex={0}
+            role="region"
+            aria-label="Recent audits overview table"
+            className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/50 focus:outline-none focus:ring-1 focus:ring-cyan-500"
+          >
             <table className="w-full text-left text-sm text-slate-300">
               <thead className="bg-slate-950/80 text-xs uppercase text-slate-400 border-b border-slate-800">
                 <tr>

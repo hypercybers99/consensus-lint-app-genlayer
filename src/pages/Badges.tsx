@@ -27,6 +27,7 @@ export const Badges: React.FC = () => {
   const [badgeOwner, setBadgeOwner] = useState<string>('');
   const [badges, setBadges] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [rpcError, setRpcError] = useState<string | null>(null);
 
   // Claim form state
   const [claimTargetId, setClaimTargetId] = useState('');
@@ -56,6 +57,7 @@ export const Badges: React.FC = () => {
 
   const loadBadges = useCallback(async () => {
     setLoading(true);
+    setRpcError(null);
     try {
       const [m, o, ids] = await Promise.all([
         getBadgesMeta(),
@@ -71,8 +73,9 @@ export const Badges: React.FC = () => {
       } else {
         setBadges([]);
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error('Failed to load badges:', e);
+      setRpcError(e?.message || 'RPC communication error');
     } finally {
       setLoading(false);
     }
@@ -444,7 +447,24 @@ export const Badges: React.FC = () => {
       <div className="space-y-4">
         <h2 className="text-lg font-bold text-white">Minted Hygiene Badges ({badges.length})</h2>
 
-        {badges.length === 0 ? (
+        {rpcError ? (
+          <div
+            data-testid="rpc-error-state"
+            className="p-8 rounded-xl border border-rose-900/60 bg-rose-950/20 text-center space-y-3"
+          >
+            <div className="text-rose-200 font-bold">RPC Communication Error</div>
+            <p className="text-xs text-slate-300">
+              Failed to communicate with GenLayer Studionet (Preview) RPC endpoint.
+            </p>
+            <button
+              type="button"
+              onClick={loadBadges}
+              className="px-4 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold transition"
+            >
+              Retry
+            </button>
+          </div>
+        ) : badges.length === 0 ? (
           <div className="p-8 rounded-xl border border-slate-800 bg-slate-900/40 text-center text-slate-500 text-sm">
             No hygiene badges minted yet.
           </div>

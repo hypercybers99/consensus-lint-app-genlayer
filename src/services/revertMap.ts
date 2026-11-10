@@ -169,7 +169,8 @@ export const REVERT_MAP: Record<string, { title: string; explanation: string }> 
 
 export function parseRevertMessage(rawError: unknown): { title: string; explanation: string; raw: string } {
   const rawStr = typeof rawError === 'string' ? rawError : (rawError as any)?.message || JSON.stringify(rawError || '');
-  for (const [key, mapping] of Object.entries(REVERT_MAP)) {
+  const sortedEntries = Object.entries(REVERT_MAP).sort((a, b) => b[0].length - a[0].length);
+  for (const [key, mapping] of sortedEntries) {
     if (rawStr.includes(key)) {
       return { title: mapping.title, explanation: mapping.explanation, raw: key };
     }
